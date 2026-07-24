@@ -5,28 +5,36 @@
 
 <style>
 body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
-h2 { color:#6cf; }
+h1 { color:#6cf; }
 pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
 </style>
 
 </head>
 
 <body>
 
-<h2>STATION LIVEBRIDGE</h2>
+<h1>STATION LIVEBRIDGE</h1>
+<p>Echtzeit-Brücke zwischen LIVE, RUNTIME und SYSTEM.</p>
 
-<p>LIVEBRIDGE verbindet alle Motoren, Router und Hooks in Echtzeit.</p>
+<pre id="bridgeInfo">Lade LIVEBRIDGE...</pre>
 
-<pre id="lbInfo">Lade LIVEBRIDGE...</pre>
+<button onclick="showBridge()">Bridge anzeigen</button>
 
 <script src="livebridge.js"></script>
 
 <script>
 setTimeout(() => {
-    const lb = window.STATION_LIVEBRIDGE;
-    document.getElementById("lbInfo").innerText =
-        JSON.stringify(lb.cfg, null, 2);
+    const bridge = window.STATION_LIVEBRIDGE;
+    document.getElementById("bridgeInfo").innerText =
+        JSON.stringify(bridge.cfg, null, 2);
 }, 500);
+
+function showBridge() {
+    const bridge = window.STATION_LIVEBRIDGE;
+    alert(JSON.stringify(bridge.cfg, null, 2));
+}
 </script>
 
 </body>
