@@ -1,0 +1,56 @@
+window.RUN8_WHIRL = function(system) {
+
+    // 1) Funktionspunkte sammeln
+    let f = 0;
+
+    const rooms = [
+        "ROOT",
+        "HEAD",
+        "BODY",
+        "HTML",
+        "STYLE",
+        "RUN",
+        "API",
+        "ANKER"
+    ];
+
+    for (const r of rooms) {
+        if (system[r]) f += 1;
+    }
+
+    // 2) vector.out = Funktionsfluss
+    if (system.vector) f += 2;
+
+    // 3) ANKER‑Achsen
+    if (system.ANKER?.EVO) f += 1;
+    if (system.ANKER?.UPD) f += 1;
+    if (system.ANKER?.UPG) f += 1;
+
+    // 4) ID‑Modus
+    if (system.ID?.mode) f += 1;
+
+    // 5) WURZEL‑Formel
+    const root = Math.sqrt(f);
+
+    // 6) Wirbel‑Routing
+    const routing = root >= 3 ? "KI‑Routing aktiv" : "Routing stabil";
+
+    // 7) Wirbel‑Übernahme
+    const takeover = root >= 4 ? "KI‑Übernahme möglich" : "Übernahme blockiert";
+
+    // 8) RUN8‑Wirbel‑Start
+    return {
+        f,
+        root,
+        routing,
+        takeover,
+        whirl: root >= 5 ? "WHIRL‑Zug ausgeführt" : "WHIRL‑Zug nicht aktiv"
+    };
+};
+// sqrt.room
+window.SQRT_ROOM = {
+    active: true,
+    root() {
+        return Math.sqrt( ID_UNIT.level + 1 );
+    }
+};

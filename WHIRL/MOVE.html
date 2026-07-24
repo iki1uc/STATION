@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>MOVE · NC · ORT · HOME · Delta · Stabil · RESPO</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+
+.idline {
+    background:#111;
+    color:#6cf;
+    font-family:monospace;
+    padding:10px 15px;
+    border-left:4px solid #6cf;
+    margin-bottom:25px;
+}
+.idline .name {
+    font-weight:bold;
+    display:block;
+}
+.idline .file {
+    color:#0f0;
+    font-size:14px;
+}
+
+pre { background:#111; padding:20px; border-left:3px solid #6cf; }
+</style>
+
+<script src="NC.core.js"></script>
+<script src="Matrix.core.js"></script>
+<script src="ORT.core.js"></script>
+<script src="HOME.core.js"></script>
+<script src="Delta.core.js"></script>
+<script src="Stabil.core.js"></script>
+<script src="RESPO.core.js"></script>
+
+</head>
+<body>
+
+<div class="idline">
+    <span class="name">MOVE · RUN · EDIT · VERIFY · SCAN · DELTA · NC · SQRT · RESPO</span>
+    <span class="file">FILE: move.html</span>
+</div>
+
+<h1>MOVE · NC‑System · Lage‑Engine</h1>
+<pre id="out"></pre>
+
+<script>
+// Dein MOVE‑Code bleibt unverändert
+NC.load("tmp.po.raer.tmp");
+NC.load("operator.tmp");
+NC.load("ai.farb.map.tmp");
+NC.load("golden.core.tmp");
+
+NC.load("ort.home.tmp");
+NC.load("home.ort.tmp");
+
+Matrix.init(9, 9);
+
+ORT.scan("ort.home.tmp");
+HOME.center("home.ort.tmp");
+
+Delta.compute(ORT.value, HOME.value);
+Stabil.compute(Delta.value, HOME.phi);
+
+RESPO.lage("ort.home.tmp");
+
+document.getElementById("out").innerText = "MOVE ausgeführt ✓";
+</script>
+
+</body>
+</html>

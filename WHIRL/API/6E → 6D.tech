@@ -1,0 +1,11 @@
+# TECH-MODUL
+# Basis-Skeleton für iki1uc / WHIRL / NC²□ / API-System
+
+TECH.NAME = "<NAME>"
+TECH.VERSION = "1.0"
+TECH.TYPE = "converter"
+
+TECH.INPUT = []
+TECH.OUTPUT = []
+
+TECH.STATUS = "initialized"

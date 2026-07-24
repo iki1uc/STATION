@@ -1,0 +1,34 @@
+window.RUN8_WHIRL = function(system) {
+
+    let f = 0;
+
+    const rooms = [
+        "ROOT","HEAD","BODY","HTML","STYLE",
+        "RUN","API","ANKER"
+    ];
+
+    for (const r of rooms) {
+        if (system[r]) f += 1;
+    }
+
+    if (system.vector) f += 2;
+
+    if (system.ANKER?.EVO) f += 1;
+    if (system.ANKER?.UPD) f += 1;
+    if (system.ANKER?.UPG) f += 1;
+
+    if (system.ID?.mode) f += 1;
+
+    const root = Math.sqrt(f);
+
+    const routing  = root >= 3 ? "KI‑Routing aktiv" : "Routing stabil";
+    const takeover = root >= 4 ? "KI‑Übernahme möglich" : "Übernahme blockiert";
+
+    return {
+        f,
+        root,
+        routing,
+        takeover,
+        whirl: root >= 5 ? "WHIRL‑Zug ausgeführt" : "WHIRL‑Zug nicht aktiv"
+    };
+};

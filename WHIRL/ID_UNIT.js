@@ -1,0 +1,9 @@
+// Datei: ID_UNIT.js
+window.ID_UNIT = {
+    mode: "sqrt",        // KI‑Modus
+    level: 3,            // Funktionsstufe
+    vector: true,        // ID liefert Funktionsfluss
+    info() {
+        return "ID‑Einheit aktiv · SQRT‑Modus";
+    }
+};

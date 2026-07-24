@@ -1,0 +1,35 @@
+# NC²□.sync
+# Hardware‑Form · NC‑Operator · iki1uc‑System
+
+SYNC.NAME = "NC²□"
+SYNC.TYPE = "geometry-sync"
+
+# Hardware-Formen
+SYNC.FORM = {
+    VECTOR:   "⊙",
+    PLANE:    "⊖",
+    CUBE:     "⊕",
+    CYLINDER: "⊗",
+    TORUS:    "⊘"
+}
+
+# NC-Operatoren
+SYNC.OPERATOR = {
+    "⊙": "vector",
+    "⊖": "plane",
+    "⊕": "cube",
+    "⊗": "cylinder",
+    "⊘": "torus"
+}
+
+# Sync-Regeln
+SYNC.RULES = {
+    vector:   ["plane"],
+    plane:    ["cube"],
+    cube:     ["cylinder"],
+    cylinder: ["torus"],
+    torus:    ["vector"]   # 360°-Loop
+}
+
+# Status
+SYNC.STATUS = "initialized"
