@@ -1,0 +1,43 @@
+{
+  "id": "STATION-CORE-EXT",
+  "instance": "iki1uc",
+  "role": "CORE-MASTER",
+
+  "identity": {
+    "name": "STATION",
+    "version": "1.0.0",
+    "build": "iki1uc-core",
+    "author": "ridvan"
+  },
+
+  "registry": {
+    "root": "STATION/root.ext.js",
+    "pipe": "STATION/PIPE/",
+    "tmp": "STATION/tmp/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "api": "STATION/api.core.js",
+    "send": "STATION/send.ext.js",
+    "push": "STATION/push.ext.js",
+    "gate": "STATION/gate.ext.js",
+    "rdy": "STATION/rdy.ext.js",
+    "home": "STATION/home.ext.js",
+    "world": "STATION/world.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "tr": "STATION/tr.ext.js",
+    "xi": "STATION/xi.ext.js"
+  },
+
+  "heartbeat": {
+    "enabled": true,
+    "interval": 10
+  },
+
+  "integrity": {
+    "check_modules": true,
+    "check_paths": true,
+    "check_sync": true
+  },
+
+  "status": "READY"
+}
