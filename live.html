@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION LIVE</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h1 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h1>STATION LIVE</h1>
+<p>Echtzeit-Laufzeit der gesamten STATION.</p>
+
+<pre id="liveInfo">Lade LIVE...</pre>
+
+<button onclick="showLive()">Live anzeigen</button>
+
+<script src="live.js"></script>
+
+<script>
+setTimeout(() => {
+    const live = window.STATION_LIVE;
+    document.getElementById("liveInfo").innerText =
+        JSON.stringify(live.cfg, null, 2);
+}, 500);
+
+function showLive() {
+    const live = window.STATION_LIVE;
+    alert(JSON.stringify(live.cfg, null, 2));
+}
+</script>
+
+</body>
+</html>
