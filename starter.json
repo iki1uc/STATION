@@ -1,0 +1,45 @@
+{
+  "id": "STATION-STARTER",
+  "version": "1.0.0",
+  "build": "iki1uc-starter",
+  "role": "STARTER-MASTER",
+
+  "boot": {
+    "setup": "STATION/setup.js",
+    "system": "STATION/system.ext.js",
+    "core": "STATION/core.ext.js",
+    "root": "STATION/root.ext.js",
+    "world": "STATION/world.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "xi": "STATION/xi.ext.js",
+    "tr": "STATION/tr.ext.js"
+  },
+
+  "modules": {
+    "pipe": "STATION/PIPE/",
+    "tmp": "STATION/tmp/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "api": "STATION/api.core.js",
+    "send": "STATION/send.ext.js",
+    "push": "STATION/push.ext.js",
+    "gate": "STATION/gate.ext.js",
+    "rdy": "STATION/rdy.ext.js",
+    "romgate": "STATION/rom.gate.js",
+    "home": "STATION/home.ext.js"
+  },
+
+  "matrix": {
+    "flow": [
+      "STARTER → SETUP → SYSTEM",
+      "SYSTEM → CORE → ROOT",
+      "ROOT → WORLD → UNI → XI → TR",
+      "TR → MODULES → API → PIPE → TMP → VECTOR → WHIRL",
+      "WHIRL → SEND → PUSH → GATE → RDY → HOME → STARTER"
+    ],
+    "mode": "starter",
+    "priority": "master"
+  },
+
+  "status": "STARTER_READY"
+}
