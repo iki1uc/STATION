@@ -1,0 +1,35 @@
+{
+  "id": "STATION-RELEASE",
+  "version": "1.0.0",
+  "build": "iki1uc-release",
+  "author": "ridvan",
+
+  "includes": {
+    "system": "STATION/system.ext.js",
+    "core": "STATION/core.ext.js",
+    "root": "STATION/root.ext.js",
+    "world": "STATION/world.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "xi": "STATION/xi.ext.js",
+    "tr": "STATION/tr.ext.js",
+    "home": "STATION/home.ext.js",
+    "api": "STATION/api.core.js",
+    "pipe": "STATION/PIPE/",
+    "tmp": "STATION/tmp/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "send": "STATION/send.ext.js",
+    "push": "STATION/push.ext.js",
+    "gate": "STATION/gate.ext.js",
+    "rdy": "STATION/rdy.ext.js",
+    "romgate": "STATION/rom.gate.js"
+  },
+
+  "integrity": {
+    "modules": "OK",
+    "matrix": "OK",
+    "system": "OK"
+  },
+
+  "status": "RELEASE_READY"
+}
