@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION INSTALLER</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h1 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h1>STATION INSTALLER</h1>
+<p>Installer für die gesamte STATION.</p>
+
+<pre id="installerInfo">Lade INSTALLER...</pre>
+
+<button onclick="showInstaller()">Installer anzeigen</button>
+
+<script src="installer.js"></script>
+
+<script>
+setTimeout(() => {
+    const installer = window.STATION_INSTALLER;
+    document.getElementById("installerInfo").innerText =
+        JSON.stringify(installer.cfg, null, 2);
+}, 500);
+
+function showInstaller() {
+    const installer = window.STATION_INSTALLER;
+    alert(JSON.stringify(installer.cfg, null, 2));
+}
+</script>
+
+</body>
+</html>
