@@ -1,28 +1,20 @@
-# ANKER – Stabilisationsachse · iki1uc
+# STATION · AnPI
+
+Dies ist eine vollständige Station im AnPI‑System.
+
+## Enthaltene Funktionen
+
+- Universal‑Loader
+- RUN8.bind
+- VECTOR.pipe
+- kanal‑Endpunkt
+- ARG/xARG/XARG
+- 4u‑Symbiose
+- Matrix 81 / 81_81_1 / 9hoch9
+- Verify‑System
+- OCTACORE‑PIPE
 
 ## Zweck
-ANKER ist die Stabilisationsachse des iki1uc‑Systems.
-Es hält die Achsen IQ, QI, EVO, UPD, UPG, BIOS und CALC im korrekten Verhältnis.
 
-## Struktur
-- NAME: ANKER
-- ID: A01
-- Station: S01
-- Dimension: D4
-- Modus: erabel (neutral, operation möglich)
-
-## Rolle
-ANKER stabilisiert, ohne selbst aktiv zu berechnen oder zu steuern.
-Es ist die neutrale Achse zwischen AXI, 6d und API.
-
-## Bindungen
-- AXI
-- 6d
-- 360
-- 100
-- 213 (REAL)
-- API
-
-## Status
-STATE = STABIL  
-READY = 100%
+Diese Station dient als Template.  
+Sie kann 1:1 kopiert werden, um neue Stationen zu erzeugen.
