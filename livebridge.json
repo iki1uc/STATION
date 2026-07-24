@@ -1,0 +1,25 @@
+{
+  "id": "STATION-LIVEBRIDGE",
+  "instance": "iki1uc",
+
+  "bridge": {
+    "mode": "sync",
+    "autosync": true,
+    "interval": 12,
+    "priority": "high"
+  },
+
+  "modules": {
+    "respo": "STATION/respo.hook.js",
+    "vector": "STATION/vector.hook.js",
+    "whirl": "STATION/whirl.motor.js",
+    "tmp": "STATION/tmp.router.js",
+    "pipe": "STATION/pipe.bind.js",
+    "ki": "STATION/4u/",
+    "de": "STATION/DE/",
+    "en": "STATION/EN/",
+    "rom": "STATION/ROOT/"
+  },
+
+  "status": "READY"
+}
