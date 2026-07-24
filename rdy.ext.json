@@ -1,0 +1,29 @@
+{
+  "id": "STATION-RDY-EXT",
+  "instance": "iki1uc",
+  "role": "RDY-MASTER",
+
+  "modules": {
+    "root": "STATION/root.ext.js",
+    "pipe": "STATION/PIPE/",
+    "respo": "STATION/respo.hook.js",
+    "vector": "STATION/vector.hook.js",
+    "whirl": "STATION/whirl.motor.js",
+    "tmp": "STATION/tmp.router.js",
+    "livebridge": "STATION/livebridge.js",
+    "api": "STATION/api.core.js",
+    "send": "STATION/send.ext.js",
+    "push": "STATION/push.ext.js",
+    "gate": "STATION/gate.ext.js",
+    "home": "STATION/home.ext.js"
+  },
+
+  "checks": {
+    "exists": true,
+    "loaded": true,
+    "active": true,
+    "synced": true
+  },
+
+  "status": "READY"
+}
