@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION SEND EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION SEND EXT</h2>
+
+<p>SEND sendet Signale an PIPE, TMP, VECTOR, WHIRL, KI, DE/EN, ROOT und API.</p>
+
+<pre id="sendInfo">Lade SEND...</pre>
+
+<button onclick="testSEND()">SEND Test Call</button>
+
+<script src="send.ext.js"></script>
+
+<script>
+setTimeout(() => {
+    const send = window.STATION_SEND_EXT;
+    document.getElementById("sendInfo").innerText =
+        JSON.stringify(send.cfg, null, 2);
+}, 500);
+
+function testSEND() {
+    const send = window.STATION_SEND_EXT;
+    const result = send.send("vector", "move-X");
+    alert(JSON.stringify(result, null, 2));
+}
+</script>
+
+</body>
+</html>
