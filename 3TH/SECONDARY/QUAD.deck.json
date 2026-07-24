@@ -1,0 +1,41 @@
+{
+  "quad-deck": {
+    "version": "1.0",
+    "layer": "QUAD",
+    "deck": 3,
+
+    "deck-core": {
+      "mode": "secondary-deck",
+      "priority": 2,
+      "stability": 1.0
+    },
+
+    "deck-map": {
+      "primary": {
+        "X": { "slot": 1, "depth": 0.4 },
+        "Y": { "slot": 2, "depth": 0.4 },
+        "Z": { "slot": 3, "depth": 0.4 }
+      },
+      "secondary": {
+        "T": { "slot": 4, "depth": 0.5 },
+        "S": { "slot": 5, "depth": 0.5 }
+      },
+      "motion": {
+        "MOVE":  { "slot": 6, "depth": 0.6 },
+        "STATE": { "slot": 7, "depth": 0.6 },
+        "FLOW":  { "slot": 8, "depth": 0.7 }
+      }
+    },
+
+    "deck-routing": {
+      "axis-route": "QUAD-DECK-AXIS",
+      "fusion-route": "QUAD-DECK-FUSION",
+      "visual-route": "QUAD-DECK-VISUAL"
+    },
+
+    "deck-output": {
+      "quad-deck-system": "QUAD-DECK-SYSTEM",
+      "quad-deck-visual": "QUAD-DECK-VISUAL"
+    }
+  }
+}

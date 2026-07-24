@@ -1,0 +1,58 @@
+{
+  "quad-map": {
+    "version": "1.0",
+    "layer": "QUAD",
+    "deck": 3,
+
+    "map-core": {
+      "mode": "secondary-map",
+      "structure": "axis-grouping",
+      "stability": 1.0
+    },
+
+    "map-axis": {
+      "primary": {
+        "X": { "slot": 1, "group": "primary" },
+        "Y": { "slot": 2, "group": "primary" },
+        "Z": { "slot": 3, "group": "primary" }
+      },
+      "secondary": {
+        "T": { "slot": 4, "group": "secondary" },
+        "S": { "slot": 5, "group": "secondary" }
+      },
+      "motion": {
+        "MOVE":  { "slot": 6, "group": "motion" },
+        "STATE": { "slot": 7, "group": "motion" },
+        "FLOW":  { "slot": 8, "group": "motion" }
+      }
+    },
+
+    "map-fusion": {
+      "vector": {
+        "X+Y": { "slot": 9, "mode": "vector" },
+        "Y+Z": { "slot": 10, "mode": "vector" },
+        "Z+X": { "slot": 11, "mode": "vector" }
+      },
+      "pulse": {
+        "T+S": { "slot": 12, "mode": "pulse" }
+      },
+      "dash": {
+        "MOVE+STATE": { "slot": 13, "mode": "dash" }
+      },
+      "wave": {
+        "FLOW+T": { "slot": 14, "mode": "wave" }
+      }
+    },
+
+    "map-routing": {
+      "axis-route": "QUAD-MAP-AXIS",
+      "fusion-route": "QUAD-MAP-FUSION",
+      "visual-route": "QUAD-MAP-VISUAL"
+    },
+
+    "map-output": {
+      "quad-map-system": "QUAD-MAP-SYSTEM",
+      "quad-map-visual": "QUAD-MAP-VISUAL"
+    }
+  }
+}

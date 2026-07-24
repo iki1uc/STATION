@@ -1,0 +1,64 @@
+{
+  "octa-tertiary-core": {
+    "version": "1.0",
+    "tier": "TERTIARY",
+    "engine": "OCTA-3TH",
+    "deck": 3,
+
+    "core-structure": {
+      "primary-layer": "OCTA",
+      "secondary-layer": "QUAD",
+      "tertiary-layer": "3TH",
+      "mode": "tri-bind",
+      "stability": 1.0
+    },
+
+    "core-bind": {
+      "bind-type": "tri-axis-fusion",
+      "bind-strength": 1.3,
+      "bind-color": "#00c8ff",
+      "bind-map": {
+        "OCTA": ["X","Y","Z","T","S","MOVE","STATE","FLOW"],
+        "QUAD": ["primary","secondary","motion"],
+        "3TH": ["alpha","beta","gamma"]
+      }
+    },
+
+    "core-fusion": {
+      "fusion-primary": {
+        "X+Y+Z": { "mode": "tri-vector", "strength": 1.0 },
+        "T+S+FLOW": { "mode": "tri-wave", "strength": 1.2 }
+      },
+      "fusion-secondary": {
+        "MOVE+STATE+FLOW": { "mode": "tri-dash", "strength": 1.1 }
+      },
+      "fusion-tertiary": {
+        "alpha+beta+gamma": { "mode": "tri-core", "strength": 1.4 }
+      }
+    },
+
+    "core-sync": {
+      "sync-mode": "tri-sync",
+      "latency": 0.08,
+      "sync-map": {
+        "OCTA": "multi",
+        "QUAD": "multi",
+        "3TH": "hyper"
+      }
+    },
+
+    "core-routing": {
+      "octa-route": "TERTIARY-OCTA",
+      "quad-route": "TERTIARY-QUAD",
+      "3th-route": "TERTIARY-3TH",
+      "fusion-route": "TERTIARY-FUSION",
+      "sync-route": "TERTIARY-SYNC"
+    },
+
+    "core-output": {
+      "tertiary-core-system": "OCTA-TERTIARY-CORE",
+      "tertiary-fusion-system": "OCTA-TERTIARY-FUSION",
+      "tertiary-sync-system": "OCTA-TERTIARY-SYNC"
+    }
+  }
+}

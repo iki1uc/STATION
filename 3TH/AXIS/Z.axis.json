@@ -1,0 +1,69 @@
+{
+  "axis-z": {
+    "version": "1.0",
+    "axis-id": 3,
+    "axis-name": "Z",
+    "axis-type": "primary",
+    "deck": 3,
+
+    "vector": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0
+    },
+
+    "style": {
+      "color": "#3b3bff",
+      "width": 2,
+      "render": "line",
+      "glow": true
+    },
+
+    "raw": {
+      "id": "Z.raw",
+      "opacity": 0.8,
+      "blur": 2,
+      "pulse": false,
+      "dash": false,
+      "wave": false
+    },
+
+    "sync": {
+      "latency": 0.1,
+      "mode": "hard",
+      "speed": 1.0
+    },
+
+    "fusion": {
+      "pair": "Z+X",
+      "strength": 1.0,
+      "mode": "vector",
+      "color": "#3399ff"
+    },
+
+    "routing": {
+      "axis-route": "OCTA-AXIS-Z",
+      "raw-route": "OCTA-RAW-Z",
+      "sync-route": "OCTA-SYNC-Z",
+      "visual-route": "OCTA-VISUAL-Z",
+      "fuse-route": "OCTA-FUSE-Z",
+      "deck-route": "OCTA-DECK-Z"
+    },
+
+    "flags": {
+      "enable-axis": true,
+      "enable-raw": true,
+      "enable-sync": true,
+      "enable-fusion": true,
+      "enable-visual": true,
+      "enable-deck": true
+    },
+
+    "output": {
+      "axis-z-core": "AXIS-Z-CORE",
+      "axis-z-raw": "AXIS-Z-RAW",
+      "axis-z-system": "AXIS-Z-SYSTEM"
+    }
+  }
+}
+

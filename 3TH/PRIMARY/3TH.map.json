@@ -1,0 +1,66 @@
+{
+  "3th-map": {
+    "version": "1.0",
+    "layer": "3TH",
+    "deck": 3,
+
+    "map-core": {
+      "mode": "tri-map",
+      "structure": "tri-layer-binding",
+      "stability": 1.0
+    },
+
+    "map-layers": {
+      "octa": {
+        "X":     { "slot": 1, "group": "primary",   "depth": 0.4 },
+        "Y":     { "slot": 2, "group": "primary",   "depth": 0.4 },
+        "Z":     { "slot": 3, "group": "primary",   "depth": 0.4 },
+        "T":     { "slot": 4, "group": "secondary", "depth": 0.5 },
+        "S":     { "slot": 5, "group": "secondary", "depth": 0.5 },
+        "MOVE":  { "slot": 6, "group": "motion",    "depth": 0.6 },
+        "STATE": { "slot": 7, "group": "motion",    "depth": 0.6 },
+        "FLOW":  { "slot": 8, "group": "motion",    "depth": 0.7 }
+      },
+
+      "quad": {
+        "primary":   { "slot": 9,  "depth": 0.5 },
+        "secondary": { "slot": 10, "depth": 0.55 },
+        "motion":    { "slot": 11, "depth": 0.6 }
+      },
+
+      "3th": {
+        "alpha": { "slot": 12, "depth": 0.7 },
+        "beta":  { "slot": 13, "depth": 0.75 },
+        "gamma": { "slot": 14, "depth": 0.8 }
+      }
+    },
+
+    "map-fusion": {
+      "tri-vector": {
+        "X+Y+Z": { "slot": 15, "mode": "tri-vector", "strength": 1.0 }
+      },
+      "tri-wave": {
+        "T+S+FLOW": { "slot": 16, "mode": "tri-wave", "strength": 1.2 }
+      },
+      "tri-dash": {
+        "MOVE+STATE+FLOW": { "slot": 17, "mode": "tri-dash", "strength": 1.1 }
+      },
+      "tri-core": {
+        "alpha+beta+gamma": { "slot": 18, "mode": "tri-core", "strength": 1.4 }
+      }
+    },
+
+    "map-routing": {
+      "octa-route": "3TH-MAP-OCTA",
+      "quad-route": "3TH-MAP-QUAD",
+      "3th-route": "3TH-MAP-SELF",
+      "fusion-route": "3TH-MAP-FUSION",
+      "visual-route": "3TH-MAP-VISUAL"
+    },
+
+    "map-output": {
+      "3th-map-system": "3TH-MAP-SYSTEM",
+      "3th-map-visual": "3TH-MAP-VISUAL"
+    }
+  }
+}

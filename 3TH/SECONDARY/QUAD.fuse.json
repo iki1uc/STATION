@@ -1,0 +1,41 @@
+{
+  "quad-fuse": {
+    "version": "1.0",
+    "layer": "QUAD",
+    "deck": 3,
+
+    "fuse-core": {
+      "mode": "secondary-fusion",
+      "stability": 1.0,
+      "priority": 2
+    },
+
+    "fuse-map": {
+      "vector": {
+        "X+Y": { "strength": 1.0, "mode": "vector", "color": "#66ff66" },
+        "Y+Z": { "strength": 1.0, "mode": "vector", "color": "#66ccff" },
+        "Z+X": { "strength": 1.0, "mode": "vector", "color": "#ff6699" }
+      },
+      "pulse": {
+        "T+S": { "strength": 0.8, "mode": "pulse", "color": "#ffcc66" }
+      },
+      "dash": {
+        "MOVE+STATE": { "strength": 0.9, "mode": "dash", "color": "#ff66ff" }
+      },
+      "wave": {
+        "FLOW+T": { "strength": 1.2, "mode": "wave", "color": "#00ddaa" }
+      }
+    },
+
+    "fuse-routing": {
+      "axis-route": "QUAD-FUSE-AXIS",
+      "fusion-route": "QUAD-FUSE-FUSION",
+      "visual-route": "QUAD-FUSE-VISUAL"
+    },
+
+    "fuse-output": {
+      "quad-fuse-system": "QUAD-FUSE-SYSTEM",
+      "quad-fuse-visual": "QUAD-FUSE-VISUAL"
+    }
+  }
+}

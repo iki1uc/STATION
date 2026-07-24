@@ -1,0 +1,42 @@
+{
+  "quad-lage": {
+    "version": "1.0",
+    "layer": "QUAD",
+    "deck": 3,
+
+    "lage-core": {
+      "position": "secondary",
+      "priority": 2,
+      "depth": 0.6,
+      "visibility": 1.0
+    },
+
+    "lage-map": {
+      "primary": {
+        "X": { "depth": 0.4, "order": 1 },
+        "Y": { "depth": 0.4, "order": 2 },
+        "Z": { "depth": 0.4, "order": 3 }
+      },
+      "secondary": {
+        "T": { "depth": 0.5, "order": 4 },
+        "S": { "depth": 0.5, "order": 5 }
+      },
+      "motion": {
+        "MOVE":  { "depth": 0.6, "order": 6 },
+        "STATE": { "depth": 0.6, "order": 7 },
+        "FLOW":  { "depth": 0.7, "order": 8 }
+      }
+    },
+
+    "lage-routing": {
+      "lage-route": "QUAD-LAGE",
+      "axis-route": "QUAD-LAGE-AXIS",
+      "visual-route": "QUAD-LAGE-VISUAL"
+    },
+
+    "lage-output": {
+      "quad-lage-system": "QUAD-LAGE-SYSTEM",
+      "quad-lage-visual": "QUAD-LAGE-VISUAL"
+    }
+  }
+}

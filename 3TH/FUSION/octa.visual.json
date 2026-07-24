@@ -1,0 +1,63 @@
+{
+  "octa-visual": {
+    "version": "1.0",
+    "deck": 3,
+    "visual-core": true,
+
+    "visual-axis": {
+      "X":   { "render": "line", "color": "#ff3b3b", "width": 2, "glow": true },
+      "Y":   { "render": "line", "color": "#3bff3b", "width": 2, "glow": true },
+      "Z":   { "render": "line", "color": "#3b3bff", "width": 2, "glow": true },
+
+      "T":   { "render": "pulse", "color": "#ffaa00", "width": 3 },
+      "S":   { "render": "soft",  "color": "#ffffff", "width": 1, "alpha": 0.6 },
+
+      "MOVE":  { "render": "dash", "color": "#00eaff", "width": 2 },
+      "STATE": { "render": "dash", "color": "#ff00ea", "width": 2 },
+      "FLOW":  { "render": "wave", "color": "#00ffee", "width": 3 }
+    },
+
+    "visual-raw": {
+      "X.raw":     { "opacity": 0.8, "blur": 2 },
+      "Y.raw":     { "opacity": 0.8, "blur": 2 },
+      "Z.raw":     { "opacity": 0.8, "blur": 2 },
+
+      "T.raw":     { "opacity": 0.9, "pulse": true },
+      "S.raw":     { "opacity": 0.5, "blur": 1 },
+
+      "move.raw":  { "opacity": 0.7, "dash": true },
+      "state.raw": { "opacity": 0.7, "dash": true },
+      "flow.raw":  { "opacity": 1.0, "wave": true }
+    },
+
+    "visual-grid": {
+      "enabled": true,
+      "color": "#222222",
+      "alpha": 0.4,
+      "size": 20
+    },
+
+    "visual-panel": {
+      "background": "#0a0a0a",
+      "border": "#1f1f1f",
+      "radius": 6,
+      "shadow": true
+    },
+
+    "visual-flags": {
+      "use-glow": true,
+      "use-pulse": true,
+      "use-wave": true,
+      "use-dash": true,
+      "use-grid": true,
+      "use-blur": true
+    },
+
+    "visual-output": {
+      "octa-visual-axis": "OCTA-VISUAL-AXIS-8",
+      "octa-visual-raw": "OCTA-VISUAL-RAW-8",
+      "octa-visual-panel": "OCTA-VISUAL-PANEL"
+    }
+  }
+}
+

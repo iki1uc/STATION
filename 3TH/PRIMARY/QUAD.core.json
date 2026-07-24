@@ -1,0 +1,67 @@
+{
+  "quad-core": {
+    "version": "1.0",
+    "tier": "PRIMARY",
+    "engine": "QUAD",
+    "deck": 3,
+
+    "core-structure": {
+      "layer": "QUAD",
+      "mode": "axis-bind",
+      "stability": 1.0,
+      "bind-type": "secondary"
+    },
+
+    "core-map": {
+      "primary": ["X", "Y", "Z"],
+      "secondary": ["T", "S"],
+      "motion": ["MOVE", "STATE", "FLOW"]
+    },
+
+    "core-fusion": {
+      "vector": {
+        "X+Y": { "mode": "vector", "strength": 1.0 },
+        "Y+Z": { "mode": "vector", "strength": 1.0 },
+        "Z+X": { "mode": "vector", "strength": 1.0 }
+      },
+      "pulse": {
+        "T+S": { "mode": "pulse", "strength": 0.8 }
+      },
+      "dash": {
+        "MOVE+STATE": { "mode": "dash", "strength": 0.9 }
+      },
+      "wave": {
+        "FLOW+T": { "mode": "wave", "strength": 1.2 }
+      }
+    },
+
+    "core-sync": {
+      "sync-mode": "multi",
+      "latency": 0.1,
+      "sync-map": {
+        "X": "hard",
+        "Y": "hard",
+        "Z": "hard",
+        "T": "pulse",
+        "S": "soft",
+        "MOVE": "dash",
+        "STATE": "dash",
+        "FLOW": "wave"
+      }
+    },
+
+    "core-routing": {
+      "axis-route": "QUAD-CORE-AXIS",
+      "fusion-route": "QUAD-CORE-FUSION",
+      "sync-route": "QUAD-CORE-SYNC",
+      "visual-route": "QUAD-CORE-VISUAL"
+    },
+
+    "core-output": {
+      "quad-core-system": "QUAD-CORE-SYSTEM",
+      "quad-core-fusion-system": "QUAD-CORE-FUSION-SYSTEM",
+      "quad-core-sync-system": "QUAD-CORE-SYNC-SYSTEM"
+    }
+  }
+}
+

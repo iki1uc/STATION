@@ -1,0 +1,41 @@
+{
+  "octa-fuse": {
+    "version": "1.0",
+    "deck": 3,
+    "fusion-core": true,
+
+    "axis-fusion": {
+      "X+Y":   { "strength": 1.0, "mode": "vector", "color": "#ff9933" },
+      "Y+Z":   { "strength": 1.0, "mode": "vector", "color": "#33ff99" },
+      "Z+X":   { "strength": 1.0, "mode": "vector", "color": "#3399ff" },
+
+      "T+S":   { "strength": 0.8, "mode": "pulse",  "color": "#ffaa00" },
+      "MOVE+STATE": { "strength": 0.9, "mode": "dash", "color": "#ff00aa" },
+      "FLOW+T":     { "strength": 1.2, "mode": "wave", "color": "#00ffee" }
+    },
+
+    "raw-fusion": {
+      "X.raw+Y.raw":     { "opacity": 0.9, "blur": 3 },
+      "Y.raw+Z.raw":     { "opacity": 0.9, "blur": 3 },
+      "Z.raw+X.raw":     { "opacity": 0.9, "blur": 3 },
+
+      "T.raw+S.raw":     { "opacity": 0.7, "pulse": true },
+      "move.raw+state.raw": { "opacity": 0.8, "dash": true },
+      "flow.raw+T.raw":     { "opacity": 1.0, "wave": true }
+    },
+
+    "fusion-flags": {
+      "use-vector": true,
+      "use-pulse": true,
+      "use-wave": true,
+      "use-dash": true,
+      "use-blur": true
+    },
+
+    "fusion-output": {
+      "octa-fused-axis": "OCTA-AXIS-8",
+      "octa-fused-raw": "OCTA-RAW-8",
+      "octa-fused-visual": "OCTA-VISUAL-CORE"
+    }
+  }
+}

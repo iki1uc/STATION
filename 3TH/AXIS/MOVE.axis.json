@@ -1,0 +1,69 @@
+{
+  "axis-move": {
+    "version": "1.0",
+    "axis-id": 6,
+    "axis-name": "MOVE",
+    "axis-type": "motion",
+    "deck": 3,
+
+    "vector": {
+      "x": 0.5,
+      "y": 1.0,
+      "z": 0.5
+    },
+
+    "style": {
+      "color": "#00eaff",
+      "width": 2,
+      "render": "dash",
+      "glow": true
+    },
+
+    "raw": {
+      "id": "move.raw",
+      "opacity": 0.7,
+      "dash": true,
+      "blur": 1,
+      "pulse": false,
+      "wave": false
+    },
+
+    "sync": {
+      "latency": 0.15,
+      "mode": "dash",
+      "speed": 1.1
+    },
+
+    "fusion": {
+      "pair": "MOVE+STATE",
+      "strength": 0.9,
+      "mode": "dash",
+      "color": "#00eaff"
+    },
+
+    "routing": {
+      "axis-route": "OCTA-AXIS-MOVE",
+      "raw-route": "OCTA-RAW-MOVE",
+      "sync-route": "OCTA-SYNC-MOVE",
+      "visual-route": "OCTA-VISUAL-MOVE",
+      "fuse-route": "OCTA-FUSE-MOVE",
+      "deck-route": "OCTA-DECK-MOVE"
+    },
+
+    "flags": {
+      "enable-axis": true,
+      "enable-raw": true,
+      "enable-sync": true,
+      "enable-fusion": true,
+      "enable-visual": true,
+      "enable-deck": true
+    },
+
+    "output": {
+      "axis-move-core": "AXIS-MOVE-CORE",
+      "axis-move-raw": "AXIS-MOVE-RAW",
+      "axis-move-system": "AXIS-MOVE-SYSTEM"
+    }
+  }
+}
+

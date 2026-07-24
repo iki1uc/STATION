@@ -1,0 +1,43 @@
+{
+  "quad-panel": {
+    "version": "1.0",
+    "layer": "QUAD",
+    "deck": 3,
+
+    "panel-core": {
+      "mode": "secondary-panel",
+      "stability": 1.0,
+      "priority": 2,
+      "ui-depth": 0.6
+    },
+
+    "panel-layout": {
+      "primary": {
+        "X": { "row": 1, "col": 1, "label": "X-Axis" },
+        "Y": { "row": 1, "col": 2, "label": "Y-Axis" },
+        "Z": { "row": 1, "col": 3, "label": "Z-Axis" }
+      },
+      "secondary": {
+        "T": { "row": 2, "col": 1, "label": "T-Axis" },
+        "S": { "row": 2, "col": 2, "label": "S-Axis" }
+      },
+      "motion": {
+        "MOVE":  { "row": 3, "col": 1, "label": "MOVE" },
+        "STATE": { "row": 3, "col": 2, "label": "STATE" },
+        "FLOW":  { "row": 3, "col": 3, "label": "FLOW" }
+      }
+    },
+
+    "panel-routing": {
+      "panel-route": "QUAD-PANEL",
+      "axis-route": "QUAD-PANEL-AXIS",
+      "visual-route": "QUAD-PANEL-VISUAL",
+      "style-route": "QUAD-PANEL-STYLE"
+    },
+
+    "panel-output": {
+      "quad-panel-system": "QUAD-PANEL-SYSTEM",
+      "quad-panel-ui": "QUAD-PANEL-UI"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "octa-sync": {
+    "version": "1.0",
+    "deck": 3,
+    "sync-core": true,
+
+    "sync-axis": {
+      "X":   { "latency": 0.1, "mode": "hard", "color": "#ff3b3b" },
+      "Y":   { "latency": 0.1, "mode": "hard", "color": "#3bff3b" },
+      "Z":   { "latency": 0.1, "mode": "hard", "color": "#3b3bff" },
+
+      "T":   { "latency": 0.2, "mode": "pulse", "color": "#ffaa00" },
+      "S":   { "latency": 0.3, "mode": "soft",  "color": "#ffffff" },
+
+      "MOVE":  { "latency": 0.15, "mode": "dash", "color": "#00eaff" },
+      "STATE": { "latency": 0.15, "mode": "dash", "color": "#ff00ea" },
+      "FLOW":  { "latency": 0.05, "mode": "wave", "color": "#00ffee" }
+    },
+
+    "sync-raw": {
+      "X.raw":     { "delay": 0.1, "blur": 1 },
+      "Y.raw":     { "delay": 0.1, "blur": 1 },
+      "Z.raw":     { "delay": 0.1, "blur": 1 },
+
+      "T.raw":     { "delay": 0.2, "pulse": true },
+      "S.raw":     { "delay": 0.3, "alpha": 0.5 },
+
+      "move.raw":  { "delay": 0.15, "dash": true },
+      "state.raw": { "delay": 0.15, "dash": true },
+      "flow.raw":  { "delay": 0.05, "wave": true }
+    },
+
+    "sync-flags": {
+      "use-hard-sync": true,
+      "use-soft-sync": true,
+      "use-pulse-sync": true,
+      "use-wave-sync": true,
+      "use-dash-sync": true
+    },
+
+    "sync-output": {
+      "octa-sync-axis": "OCTA-SYNC-8",
+      "octa-sync-raw": "OCTA-SYNC-RAW-8",
+      "octa-sync-visual": "OCTA-SYNC-VISUAL"
+    }
+  }
+}
+

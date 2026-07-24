@@ -1,0 +1,59 @@
+{
+  "octa-core": {
+    "version": "1.0",
+    "deck": 3,
+    "core-enabled": true,
+
+    "axis": {
+      "X":   { "id": 1, "type": "primary",   "color": "#ff3b3b", "vector": [1,0,0] },
+      "Y":   { "id": 2, "type": "primary",   "color": "#3bff3b", "vector": [0,1,0] },
+      "Z":   { "id": 3, "type": "primary",   "color": "#3b3bff", "vector": [0,0,1] },
+
+      "T":   { "id": 4, "type": "temporal",  "color": "#ffaa00", "vector": [1,1,0] },
+      "S":   { "id": 5, "type": "structural","color": "#ffffff", "vector": [1,0,1] },
+
+      "MOVE":  { "id": 6, "type": "motion",   "color": "#00eaff", "vector": [0.5,1,0.5] },
+      "STATE": { "id": 7, "type": "state",    "color": "#ff00ea", "vector": [1,0.5,1] },
+      "FLOW":  { "id": 8, "type": "flow",     "color": "#00ffee", "vector": [0.5,0.5,1] }
+    },
+
+    "raw": {
+      "X.raw":     { "id": 1, "opacity": 0.8, "blur": 2 },
+      "Y.raw":     { "id": 2, "opacity": 0.8, "blur": 2 },
+      "Z.raw":     { "id": 3, "opacity": 0.8, "blur": 2 },
+
+      "T.raw":     { "id": 4, "pulse": true, "opacity": 0.9 },
+      "S.raw":     { "id": 5, "alpha": 0.5, "blur": 1 },
+
+      "move.raw":  { "id": 6, "dash": true, "opacity": 0.7 },
+      "state.raw": { "id": 7, "dash": true, "opacity": 0.7 },
+      "flow.raw":  { "id": 8, "wave": true, "opacity": 1.0 }
+    },
+
+    "core-links": {
+      "map":   "octa.map.json",
+      "panel": "octa.panel.json",
+      "style": "octa.style.json",
+      "fuse":  "octa.fuse.json",
+      "sync":  "octa.sync.json",
+      "visual":"octa.visual.json",
+      "deck":  "octa.deck.json"
+    },
+
+    "core-flags": {
+      "enable-axis": true,
+      "enable-raw": true,
+      "enable-fusion": true,
+      "enable-sync": true,
+      "enable-visual": true,
+      "enable-deck": true
+    },
+
+    "core-output": {
+      "octa-core-axis": "OCTA-CORE-AXIS-8",
+      "octa-core-raw": "OCTA-CORE-RAW-8",
+      "octa-core-system": "OCTA-CORE-SYSTEM"
+    }
+  }
+}
+

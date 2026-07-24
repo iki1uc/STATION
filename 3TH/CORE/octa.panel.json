@@ -1,0 +1,80 @@
+{
+  "octa-panel": {
+    "version": "1.0",
+    "deck": 3,
+    "panel-core": true,
+
+    "panel-layout": {
+      "background": "#0a0a0a",
+      "border-color": "#1f1f1f",
+      "border-width": 2,
+      "radius": 6,
+      "shadow": true,
+      "padding": 12
+    },
+
+    "panel-sections": {
+      "axis-section": {
+        "title": "OCTA Axis",
+        "enabled": true,
+        "order": 1,
+        "color": "#00c8ff"
+      },
+      "raw-section": {
+        "title": "RAW Streams",
+        "enabled": true,
+        "order": 2,
+        "color": "#ffaa00"
+      },
+      "fusion-section": {
+        "title": "Fusion Core",
+        "enabled": true,
+        "order": 3,
+        "color": "#ff00c8"
+      },
+      "sync-section": {
+        "title": "Sync Engine",
+        "enabled": true,
+        "order": 4,
+        "color": "#00ffee"
+      },
+      "visual-section": {
+        "title": "Visual Layer",
+        "enabled": true,
+        "order": 5,
+        "color": "#3bff3b"
+      },
+      "deck-section": {
+        "title": "Deck Routing",
+        "enabled": true,
+        "order": 6,
+        "color": "#ff3b3b"
+      }
+    },
+
+    "panel-controls": {
+      "toggle-axis": true,
+      "toggle-raw": true,
+      "toggle-fusion": true,
+      "toggle-sync": true,
+      "toggle-visual": true,
+      "toggle-deck": true,
+      "reset-button": true,
+      "refresh-button": true
+    },
+
+    "panel-flags": {
+      "use-shadow": true,
+      "use-radius": true,
+      "use-color-sections": true,
+      "use-interactive-controls": true
+    },
+
+    "panel-output": {
+      "octa-panel-ui": "OCTA-PANEL-UI",
+      "octa-panel-core": "OCTA-PANEL-CORE",
+      "octa-panel-layout": "OCTA-PANEL-LAYOUT"
+    }
+  }
+}
+

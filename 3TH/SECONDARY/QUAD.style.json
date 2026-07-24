@@ -1,0 +1,62 @@
+{
+  "quad-style": {
+    "version": "1.0",
+    "layer": "QUAD",
+    "deck": 3,
+
+    "style-core": {
+      "mode": "secondary-style",
+      "opacity": 0.9,
+      "blur": 1,
+      "glow": true,
+      "saturation": 1.0,
+      "contrast": 1.0
+    },
+
+    "style-map": {
+      "primary": {
+        "X": { "color": "#ff3b3b", "width": 2, "glow": true },
+        "Y": { "color": "#3bff3b", "width": 2, "glow": true },
+        "Z": { "color": "#3b3bff", "width": 2, "glow": true }
+      },
+      "secondary": {
+        "T": { "color": "#ffaa00", "width": 3, "pulse": true },
+        "S": { "color": "#ffffff", "width": 1, "soft": true }
+      },
+      "motion": {
+        "MOVE":  { "color": "#00eaff", "width": 2, "dash": true },
+        "STATE": { "color": "#ff00ea", "width": 2, "dash": true },
+        "FLOW":  { "color": "#00ffee", "width": 3, "wave": true }
+      }
+    },
+
+    "style-fusion": {
+      "vector": {
+        "X+Y": { "color": "#66ff66", "glow": true },
+        "Y+Z": { "color": "#66ccff", "glow": true },
+        "Z+X": { "color": "#ff6699", "glow": true }
+      },
+      "pulse": {
+        "T+S": { "color": "#ffcc66", "pulse": true }
+      },
+      "dash": {
+        "MOVE+STATE": { "color": "#ff66ff", "dash": true }
+      },
+      "wave": {
+        "FLOW+T": { "color": "#00ddaa", "wave": true }
+      }
+    },
+
+    "style-routing": {
+      "style-route": "QUAD-STYLE",
+      "axis-route": "QUAD-STYLE-AXIS",
+      "fusion-route": "QUAD-STYLE-FUSION",
+      "visual-route": "QUAD-STYLE-VISUAL"
+    },
+
+    "style-output": {
+      "quad-style-system": "QUAD-STYLE-SYSTEM",
+      "quad-style-visual": "QUAD-STYLE-VISUAL"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "axis-t": {
+    "version": "1.0",
+    "axis-id": 4,
+    "axis-name": "T",
+    "axis-type": "temporal",
+    "deck": 3,
+
+    "vector": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 0.0
+    },
+
+    "style": {
+      "color": "#ffaa00",
+      "width": 3,
+      "render": "pulse",
+      "glow": true
+    },
+
+    "raw": {
+      "id": "T.raw",
+      "opacity": 0.9,
+      "pulse": true,
+      "blur": 0,
+      "dash": false,
+      "wave": false
+    },
+
+    "sync": {
+      "latency": 0.2,
+      "mode": "pulse",
+      "speed": 1.3
+    },
+
+    "fusion": {
+      "pair": "T+S",
+      "strength": 0.8,
+      "mode": "pulse",
+      "color": "#ffaa00"
+    },
+
+    "routing": {
+      "axis-route": "OCTA-AXIS-T",
+      "raw-route": "OCTA-RAW-T",
+      "sync-route": "OCTA-SYNC-T",
+      "visual-route": "OCTA-VISUAL-T",
+      "fuse-route": "OCTA-FUSE-T",
+      "deck-route": "OCTA-DECK-T"
+    },
+
+    "flags": {
+      "enable-axis": true,
+      "enable-raw": true,
+      "enable-sync": true,
+      "enable-fusion": true,
+      "enable-visual": true,
+      "enable-deck": true
+    },
+
+    "output": {
+      "axis-t-core": "AXIS-T-CORE",
+      "axis-t-raw": "AXIS-T-RAW",
+      "axis-t-system": "AXIS-T-SYSTEM"
+    }
+  }
+}
+

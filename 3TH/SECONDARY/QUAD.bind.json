@@ -1,0 +1,79 @@
+{
+  "quad-bind": {
+    "version": "1.0",
+    "quad-id": 1,
+    "quad-name": "QUAD",
+    "quad-type": "secondary",
+    "deck": 3,
+
+    "quad-core": {
+      "bind-mode": "axis-merge",
+      "bind-strength": 1.0,
+      "bind-color": "#00aaff"
+    },
+
+    "quad-axis-map": {
+      "primary": {
+        "X": { "slot": 1, "weight": 1.0, "color": "#ff3b3b" },
+        "Y": { "slot": 2, "weight": 1.0, "color": "#3bff3b" },
+        "Z": { "slot": 3, "weight": 1.0, "color": "#3b3bff" }
+      },
+      "secondary": {
+        "T": { "slot": 4, "weight": 0.8, "color": "#ffaa00" },
+        "S": { "slot": 5, "weight": 0.6, "color": "#ffffff" }
+      },
+      "motion": {
+        "MOVE":  { "slot": 6, "weight": 0.9, "color": "#00eaff" },
+        "STATE": { "slot": 7, "weight": 0.9, "color": "#ff00ea" },
+        "FLOW":  { "slot": 8, "weight": 1.2, "color": "#00ffee" }
+      }
+    },
+
+    "quad-fusion": {
+      "vector-fusion": {
+        "X+Y": { "strength": 1.0, "mode": "vector" },
+        "Y+Z": { "strength": 1.0, "mode": "vector" },
+        "Z+X": { "strength": 1.0, "mode": "vector" }
+      },
+      "pulse-fusion": {
+        "T+S": { "strength": 0.8, "mode": "pulse" }
+      },
+      "dash-fusion": {
+        "MOVE+STATE": { "strength": 0.9, "mode": "dash" }
+      },
+      "wave-fusion": {
+        "FLOW+T": { "strength": 1.2, "mode": "wave" }
+      }
+    },
+
+    "quad-sync": {
+      "sync-mode": "multi",
+      "sync-latency": 0.1,
+      "sync-map": {
+        "X": "hard",
+        "Y": "hard",
+        "Z": "hard",
+        "T": "pulse",
+        "S": "soft",
+        "MOVE": "dash",
+        "STATE": "dash",
+        "FLOW": "wave"
+      }
+    },
+
+    "quad-routing": {
+      "axis-route": "QUAD-AXIS",
+      "raw-route": "QUAD-RAW",
+      "fusion-route": "QUAD-FUSION",
+      "sync-route": "QUAD-SYNC",
+      "visual-route": "QUAD-VISUAL"
+    },
+
+    "quad-output": {
+      "quad-core-system": "QUAD-CORE-SYSTEM",
+      "quad-axis-system": "QUAD-AXIS-SYSTEM",
+      "quad-fusion-system": "QUAD-FUSION-SYSTEM"
+    }
+  }
+}
+

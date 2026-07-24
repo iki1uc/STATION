@@ -1,0 +1,71 @@
+{
+  "3th-core": {
+    "version": "1.0",
+    "tier": "PRIMARY",
+    "engine": "3TH",
+    "deck": 3,
+
+    "core-structure": {
+      "layer": "3TH",
+      "mode": "tri-core",
+      "stability": 1.0,
+      "core-type": "tertiary"
+    },
+
+    "core-map": {
+      "octa": [
+        "X", "Y", "Z",
+        "T", "S",
+        "MOVE", "STATE", "FLOW"
+      ],
+      "quad": [
+        "primary", "secondary", "motion"
+      ],
+      "3th": [
+        "alpha", "beta", "gamma"
+      ]
+    },
+
+    "core-fusion": {
+      "tri-vector": {
+        "X+Y+Z": { "mode": "tri-vector", "strength": 1.0 }
+      },
+      "tri-wave": {
+        "T+S+FLOW": { "mode": "tri-wave", "strength": 1.2 }
+      },
+      "tri-dash": {
+        "MOVE+STATE+FLOW": { "mode": "tri-dash", "strength": 1.1 }
+      },
+      "tri-core": {
+        "alpha+beta+gamma": { "mode": "tri-core", "strength": 1.4 }
+      }
+    },
+
+    "core-sync": {
+      "sync-mode": "hyper",
+      "latency": 0.06,
+      "sync-map": {
+        "OCTA": "multi",
+        "QUAD": "multi",
+        "3TH": "hyper"
+      }
+    },
+
+    "core-routing": {
+      "octa-route": "3TH-CORE-OCTA",
+      "quad-route": "3TH-CORE-QUAD",
+      "3th-route": "3TH-CORE-SELF",
+      "fusion-route": "3TH-CORE-FUSION",
+      "sync-route": "3TH-CORE-SYNC",
+      "visual-route": "3TH-CORE-VISUAL"
+    },
+
+    "core-output": {
+      "3th-core-system": "3TH-CORE-SYSTEM",
+      "3th-fusion-system": "3TH-FUSION-SYSTEM",
+      "3th-sync-system": "3TH-SYNC-SYSTEM",
+      "3th-visual-system": "3TH-VISUAL-SYSTEM"
+    }
+  }
+}
+

@@ -1,0 +1,56 @@
+{
+  "octa-deck": {
+    "version": "1.0",
+    "deck": 3,
+    "deck-core": true,
+
+    "deck-axis-map": {
+      "X":   { "slot": 1, "priority": "high",   "color": "#ff3b3b" },
+      "Y":   { "slot": 2, "priority": "high",   "color": "#3bff3b" },
+      "Z":   { "slot": 3, "priority": "high",   "color": "#3b3bff" },
+
+      "T":   { "slot": 4, "priority": "medium", "color": "#ffaa00" },
+      "S":   { "slot": 5, "priority": "medium", "color": "#ffffff" },
+
+      "MOVE":  { "slot": 6, "priority": "low",  "color": "#00eaff" },
+      "STATE": { "slot": 7, "priority": "low",  "color": "#ff00ea" },
+      "FLOW":  { "slot": 8, "priority": "high", "color": "#00ffee" }
+    },
+
+    "deck-raw-map": {
+      "X.raw":     { "slot": 1, "opacity": 0.8 },
+      "Y.raw":     { "slot": 2, "opacity": 0.8 },
+      "Z.raw":     { "slot": 3, "opacity": 0.8 },
+
+      "T.raw":     { "slot": 4, "pulse": true },
+      "S.raw":     { "slot": 5, "alpha": 0.5 },
+
+      "move.raw":  { "slot": 6, "dash": true },
+      "state.raw": { "slot": 7, "dash": true },
+      "flow.raw":  { "slot": 8, "wave": true }
+    },
+
+    "deck-routing": {
+      "axis-routing": "OCTA-AXIS-ROUTE",
+      "raw-routing": "OCTA-RAW-ROUTE",
+      "visual-routing": "OCTA-VISUAL-ROUTE",
+      "sync-routing": "OCTA-SYNC-ROUTE",
+      "fusion-routing": "OCTA-FUSION-ROUTE"
+    },
+
+    "deck-flags": {
+      "use-axis-routing": true,
+      "use-raw-routing": true,
+      "use-visual-routing": true,
+      "use-sync-routing": true,
+      "use-fusion-routing": true
+    },
+
+    "deck-output": {
+      "octa-deck-axis": "OCTA-DECK-AXIS-8",
+      "octa-deck-raw": "OCTA-DECK-RAW-8",
+      "octa-deck-core": "OCTA-DECK-CORE"
+    }
+  }
+}
+

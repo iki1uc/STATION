@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Α64‑Achsenfamilie · ROOT‑Ebene</title>
+
+<style>
+    body {
+        background: #0a0a0a;
+        color: #e6e6e6;
+        font-family: Consolas, monospace;
+        padding: 30px;
+    }
+
+    h1 {
+        color: #ffcc00;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .axis-block {
+        border: 1px solid #333;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        background: #111;
+    }
+
+    .axis-title {
+        font-size: 22px;
+        color: #ffaa00;
+        margin-bottom: 10px;
+    }
+
+    .axis-entry {
+        padding: 6px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    .slot {
+        color: #888;
+    }
+
+    .group {
+        color: #66ccff;
+    }
+
+    .depth {
+        color: #ff66aa;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Α64‑Achsenfamilie · ROOT‑Ebene</h1>
+<p>Master‑Achsen‑DNA · 64 Slots · Basis aller Engine‑Achsen</p>
+
+<!-- PRIMARY ACHSEN -->
+<div class="axis-block">
+    <div class="axis-title">PRIMARY‑Achsen</div>
+
+    <div class="axis-entry"><span class="slot">Slot 1</span> — X — <span class="group">primary</span> — <span class="depth">0.40</span></div>
+    <div class="axis-entry"><span class="slot">Slot 2</span> — Y — <span class="group">primary</span> — <span class="depth">0.40</span></div>
+    <div class="axis-entry"><span class="slot">Slot 3</span> — Z — <span class="group">primary</span> — <span class="depth">0.40</span></div>
+</div>
+
+<!-- SECONDARY ACHSEN -->
+<div class="axis-block">
+    <div class="axis-title">SECONDARY‑Achsen</div>
+
+    <div class="axis-entry"><span class="slot">Slot 4</span> — T — <span class="group">secondary</span> — <span class="depth">0.50</span></div>
+    <div class="axis-entry"><span class="slot">Slot 5</span> — S — <span class="group">secondary</span> — <span class="depth">0.50</span></div>
+</div>
+
+<!-- MOTION ACHSEN -->
+<div class="axis-block">
+    <div class="axis-title">MOTION‑Achsen</div>
+
+    <div class="axis-entry"><span class="slot">Slot 6</span> — MOVE — <span class="group">motion</span> — <span class="depth">0.60</span></div>
+    <div class="axis-entry"><span class="slot">Slot 7</span> — STATE — <span class="group">motion</span> — <span class="depth">0.60</span></div>
+    <div class="axis-entry"><span class="slot">Slot 8</span> — FLOW — <span class="group">motion</span> — <span class="depth">0.70</span></div>
+</div>
+
+<!-- TRI‑CORE ACHSEN -->
+<div class="axis-block">
+    <div class="axis-title">3TH‑Tri‑Core‑Achsen</div>
+
+    <div class="axis-entry"><span class="slot">Slot 12</span> — alpha — <span class="group">tri-core</span> — <span class="depth">0.70</span></div>
+    <div class="axis-entry"><span class="slot">Slot 13</span> — beta — <span class="group">tri-core</span> — <span class="depth">0.75</span></div>
+    <div class="axis-entry"><span class="slot">Slot 14</span> — gamma — <span class="group">tri-core</span> — <span class="depth">0.80</span></div>
+</div>
+
+<!-- RESERVE SLOTS -->
+<div class="axis-block">
+    <div class="axis-title">Reserve‑Slots (15–64)</div>
+    <p>Für zukünftige Achsen‑Erweiterungen, RAW‑Vektoren, Fusions‑Achsen und Engine‑Upgrades.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>BRM · Axis‑Engine Manager</title>
+
+<style>
+    body {
+        background: #0d0d0d;
+        color: #e6e6e6;
+        font-family: Consolas, monospace;
+        padding: 30px;
+    }
+
+    h1 {
+        color: #ffcc00;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: #ffaa00;
+        margin-top: 40px;
+    }
+
+    .section {
+        background: #111;
+        border: 1px solid #333;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 6px;
+    }
+
+    .axis-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .axis-table th, .axis-table td {
+        border: 1px solid #222;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .axis-table th {
+        background: #222;
+        color: #ffcc00;
+    }
+
+    .axis-table td.slot {
+        color: #888;
+    }
+
+    .axis-table td.group {
+        color: #66ccff;
+    }
+
+    .axis-table td.depth {
+        color: #ff66aa;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #ffaa00;
+        color: #000;
+        border-radius: 4px;
+        margin-top: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background: #ffcc33;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>BRM.index · Axis‑Engine Manager</h1>
+<p>Basis‑Modul zur Verwaltung der Α64‑Achsenfamilie, Engine‑DNA, Slots, Visualisierung und Erweiterung.</p>
+
+<!-- SECTION: ACHSEN-DNA -->
+<div class="section">
+    <h2>Α64‑Achsen‑DNA · ROOT‑Ebene</h2>
+    <p>Die Achsen‑DNA wird aus der Datei <strong>Α64‑Achsenfamilie.html</strong> geladen und bildet die Wurzel der gesamten Engine.</p>
+
+    <a class="btn" href="Α64‑Achsenfamilie.html">Achsen‑DNA öffnen</a>
+</div>
+
+<!-- SECTION: ACHSEN-ÜBERSICHT -->
+<div class="section">
+    <h2>Achsen‑Übersicht (Slots 1–14)</h2>
+    <table class="axis-table">
+        <tr>
+            <th>Slot</th>
+            <th>Achse</th>
+            <th>Gruppe</th>
+            <th>Depth</th>
+        </tr>
+
+        <tr><td class="slot">1</td><td>X</td><td class="group">primary</td><td class="depth">0.40</td></tr>
+        <tr><td class="slot">2</td><td>Y</td><td class="group">primary</td><td class="depth">0.40</td></tr>
+        <tr><td class="slot">3</td><td>Z</td><td class="group">primary</td><td class="depth">0.40</td></tr>
+
+        <tr><td class="slot">4</td><td>T</td><td class="group">secondary</td><td class="depth">0.50</td></tr>
+        <tr><td class="slot">5</td><td>S</td><td class="group">secondary</td><td class="depth">0.50</td></tr>
+
+        <tr><td class="slot">6</td><td>MOVE</td><td class="group">motion</td><td class="depth">0.60</td></tr>
+        <tr><td class="slot">7</td><td>STATE</td><td class="group">motion</td><td class="depth">0.60</td></tr>
+        <tr><td class="slot">8</td><td>FLOW</td><td class="group">motion</td><td class="depth">0.70</td></tr>
+
+        <tr><td class="slot">12</td><td>alpha</td><td class="group">tri-core</td><td class="depth">0.70</td></tr>
+        <tr><td class="slot">13</td><td>beta</td><td class="group">tri-core</td><td class="depth">0.75</td></tr>
+        <tr><td class="slot">14</td><td>gamma</td><td class="group">tri-core</td><td class="depth">0.80</td></tr>
+    </table>
+</div>
+
+<!-- SECTION: ACHSEN-ERWEITERUNG -->
+<div class="section">
+    <h2>Achsen‑Erweiterung</h2>
+    <p>Slots 15–64 stehen für zukünftige Achsen, RAW‑Vektoren, Engine‑Upgrades und Fusion‑Achsen bereit.</p>
+
+    <ul>
+        <li>Neue Achsen hinzufügen</li>
+        <li>RAW‑Vektoren erweitern</li>
+        <li>Fusions‑Achsen definieren</li>
+        <li>Engine‑Upgrades einfügen</li>
+    </ul>
+</div>
+
+<!-- SECTION: VISUALISIERUNG -->
+<div class="section">
+    <h2>Achsen‑Visualisierung</h2>
+    <p>Die Visualisierung erfolgt über die Dateien:</p>
+
+    <ul>
+        <li>OCTA.visual.json</li>
+        <li>QUAD.visual.json</li>
+        <li>3TH.visual.json (optional)</li>
+    </ul>
+
+    <p>Jede Achse besitzt:</p>
+    <ul>
+        <li>Farbe</li>
+        <li>Linienbreite</li>
+        <li>Glow / Pulse / Dash / Wave</li>
+        <li>Depth‑Wert</li>
+    </ul>
+</div>
+
+<!-- SECTION: SLOT-OPTIMIERUNG -->
+<div class="section">
+    <h2>Achsen‑Slots optimieren</h2>
+    <p>Optimierung der Achsen‑Slots erfolgt über:</p>
+
+    <ul>
+        <li>OCTA.map.json</li>
+        <li>QUAD.map.json</li>
+        <li>3TH.map.json</li>
+    </ul>
+
+    <p>Optimierungsziele:</p>
+    <ul>
+        <li>Depth‑Balance</li>
+        <li>Gruppen‑Konsistenz</li>
+        <li>Fusion‑Kompatibilität</li>
+        <li>SYNC‑Stabilität</li>
+    </ul>
+</div>
+
+<!-- SECTION: DNA-FINAL -->
+<div class="section">
+    <h2>Achsen‑DNA finalisieren</h2>
+    <p>Die finale Achsen‑DNA wird durch die Kombination folgender Dateien erzeugt:</p>
+
+    <ul>
+        <li>Α64‑Achsenfamilie.html</li>
+        <li>OCTA.core.json</li>
+        <li>QUAD.core.json</li>
+        <li>3TH.core.json</li>
+        <li>RAW‑Achsen</li>
+        <li>FUSION‑Matrix</li>
+        <li>SYNC‑Matrix</li>
+    </ul>
+
+    <p>Damit ist die Achsen‑DNA vollständig und Engine‑kompatibel.</p>
+</div>
+
+</body>
+</html>
+
