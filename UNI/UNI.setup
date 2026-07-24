@@ -1,0 +1,25 @@
+[UNI.setup]
+version = 1.0
+type    = "universum-setup"
+
+uni.bind = [
+  "UNIVERSUM.final",
+  "C.RESPO.final",
+  "X.RESPO.final",
+  "Z.RESPO.final",
+  "ORT.scan.final",
+  "scan.language.final"
+]
+
+uni.language = ["DE","TR","EN","DA","NE","BEN"]
+
+uni.axiome = [
+  "praesens",
+  "argument",
+  "fehler"
+]
+
+uni.mode = ["merge","context","argument","assimilation","sinn"]
+
+uni.output = "UNI.setup.final"
+uni.state  = "active"

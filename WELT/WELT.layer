@@ -1,0 +1,15 @@
+[WELT.layer]
+version = 1.0
+type    = "welt-layer"
+
+layer.name   = "WELT.HI"
+layer.mode   = ["global","eden","portal","overlay"]
+
+layer.bind = [
+  "HI.layer.final",
+  "WELT.portal.final"
+]
+
+layer.output = "WELT.layer.final"
+layer.state  = "active"
+

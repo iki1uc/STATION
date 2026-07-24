@@ -1,0 +1,26 @@
+[WELT.language.buttons]
+version = 1.1
+type    = "welt-language-ui"
+zero    = 0
+
+lang.fixed = ["DE","TR","EN"]
+
+# frei wählbare Slots
+lang.flex = {
+  DA  = "du",
+  NE  = "er",
+  BEN = "ich"
+}
+
+lang.labels = {
+  DE  = "Deutsch",
+  TR  = "Türkçe",
+  EN  = "English",
+  DA  = "du",
+  NE  = "er",
+  BEN = "ich"
+}
+
+lang.mode   = ["switch","manual","auto","fallback"]
+lang.output = "WELT.language.buttons.final"
+lang.state  = "active"

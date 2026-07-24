@@ -1,0 +1,18 @@
+[UNI.bridge]
+version = 1.0
+type    = "universum-bridge"
+
+bridge.bind = [
+  "UNIVERSUM.final",
+  "C.RESPO.final",
+  "X.RESPO.final",
+  "Z.RESPO.final",
+  "UNI.language.final",
+  "ORT.scan.final",
+  "scan.language.final"
+]
+
+bridge.mode = ["ANA","API","allxall","vector"]
+
+bridge.output = "UNI.bridge.final"
+bridge.state  = "active"

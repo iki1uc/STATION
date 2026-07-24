@@ -1,0 +1,49 @@
+[DE.index.generator]
+version = 1.0
+type    = "index-core"
+zero    = 0
+
+index.name     = "WELT.EDEN.index"
+index.title    = "EDEN Portal Generator – WELT"
+index.mode     = ["build","sync","render","eden","welt"]
+
+# Alle Module laden
+index.load = [
+  "EDEN.element.glyphs",
+  "EDEN.portal.crown",
+  "EDEN.cube.holo",
+  "EDEN.rune.energy",
+  "EDEN.portal.system",
+  "HI.layer",
+  "screen.room",
+  "port.visuals"
+]
+
+# Pipeline definieren
+index.pipeline = [
+  "eden.element.final",
+  "eden.crown.final",
+  "eden.cube.final",
+  "eden.rune.final",
+  "eden.portal.system.final",
+  "HI.layer.final",
+  "screen.room.final",
+  "visuals.final"
+]
+
+# Render‑Engine
+index.render.mode  = ["portal","glyph","cube","rune","element","sync","animate"]
+index.render.speed = "1.0"
+
+# Finaler Output für index.html
+index.output = "EDEN.index.final"
+index.state  = "active"
+index.load += [
+  "WELT.index.language",
+  "WELT.index.html.layer"
+]
+
+index.pipeline += [
+  "WELT.language.final",
+  "WELT.index.html.final"
+]

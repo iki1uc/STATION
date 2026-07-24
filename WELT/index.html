@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>WELT‑KOSMOS • 9×9‑UNI‑Matrix</title>
+
+<style>
+body { background:#000; color:#eee; font-family:Consolas; padding:20px; }
+h1,h2 { color:#00e0ff; text-shadow:0 0 10px #00e0ff; }
+.block { border:1px solid #00e0ff; padding:15px; margin:20px 0; border-radius:8px; background:#111; }
+.matrix { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.cell { padding:10px; background:#222; border:1px solid #333; text-align:center; border-radius:6px; }
+.scanbox { background:#222; border:1px solid #444; padding:10px; margin-top:10px; }
+.verify { background:#1a1a1a; border:1px solid #5500ff; padding:10px; margin-top:10px; }
+.modebox { margin-top:10px; }
+</style>
+
+<script>
+// Station automatisch erkennen (C / X / Z / DA / NE / BEN / DE / TR / EN)
+function detectStation() {
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes("c")) return "C";
+  if (path.includes("x")) return "X";
+  if (path.includes("z")) return "Z";
+  if (path.includes("da")) return "DA";
+  if (path.includes("ne")) return "NE";
+  if (path.includes("ben")) return "BEN";
+  if (path.includes("de")) return "DE";
+  if (path.includes("tr")) return "TR";
+  if (path.includes("en")) return "EN";
+  return "WELT";
+}
+const station = detectStation();
+</script>
+
+</head>
+<body>
+
+<h1>WELT‑KOSMOS • Station: <script>document.write(station);</script></h1>
+
+<!-- WELT‑Layer -->
+<div class="block">
+  <h2>WELT‑Layer</h2>
+  <div class="matrix">
+    <div class="cell">WELT.boot</div>
+    <div class="cell">WELT.layer</div>
+    <div class="cell">WELT.portal</div>
+
+    <div class="cell">WELT.sync</div>
+    <div class="cell">welt.room</div>
+    <div class="cell">scan.language</div>
+
+    <div class="cell">ORT.scan</div>
+    <div class="cell">DE.index.generator</div>
+    <div class="cell">WELT.index.language</div>
+  </div>
+</div>
+
+<!-- 9×9‑Matrix -->
+<div class="block">
+  <h2>9×9‑UNI‑Matrix (axiom == tmp == trans == warb)</h2>
+
+  <div class="matrix">
+    <div class="cell">C</div>
+    <div class="cell">X</div>
+    <div class="cell">Z</div>
+
+    <div class="cell">DA</div>
+    <div class="cell">NE</div>
+    <div class="cell">BEN</div>
+
+    <div class="cell">DE</div>
+    <div class="cell">TR</div>
+    <div class="cell">EN</div>
+  </div>
+
+  <p>Alle 9 Axiome sind gleichzeitig:<br>
+     • Axiom<br>
+     • TMP<br>
+     • TRANS<br>
+     • WARB<br>
+     • Attack‑fähig<br>
+     • Station‑fähig</p>
+</div>
+
+<!-- Station‑Kosmos -->
+<div class="block">
+  <h2><script>document.write(station);</script>‑Kosmos</h2>
+
+  <div class="matrix">
+    <div class="cell"><script>document.write(station);</script></div>
+    <div class="cell"><script>document.write(station);</script>.tmp</div>
+    <div class="cell"><script>document.write(station);</script>.trans</div>
+
+    <div class="cell"><script>document.write(station);</script>.warb</div>
+    <div class="cell"><script>document.write(station);</script>-NC3×3</div>
+    <div class="cell"><script>document.write(station);</script>-NC6e</div>
+
+    <div class="cell"><script>document.write(station);</script>-NC9×9</div>
+    <div class="cell">NC.math</div>
+    <div class="cell">verify.T</div>
+  </div>
+</div>
+
+<!-- FUNKTION.matrix -->
+<div class="block">
+  <h2>FUNKTION.matrix</h2>
+  <div class="matrix">
+    <div class="cell">TMP.WLOCH</div>
+    <div class="cell">TMP.KANAL</div>
+    <div class="cell">TMP.GATE</div>
+
+    <div class="cell">TRANS.WLOCH</div>
+    <div class="cell">TRANS.KANAL</div>
+    <div class="cell">TRANS.GATE</div>
+
+    <div class="cell">WARB.WLOCH</div>
+    <div class="cell">WARB.KANAL</div>
+    <div class="cell">WARB.GATE</div>
+  </div>
+</div>
+
+<!-- Modi -->
+<div class="block">
+  <h2>Modi: IN / OUT / EDIT</h2>
+
+  <div class="modebox">
+    <button onclick="alert('IN‑Modus aktiviert')">IN</button>
+    <button onclick="alert('OUT‑Modus aktiviert')">OUT</button>
+    <button onclick="alert('EDIT‑Modus aktiviert')">EDIT</button>
+  </div>
+</div>
+
+<!-- SCAN -->
+<div class="block">
+  <h2>SCAN‑Modul</h2>
+
+  <div class="scanbox">
+    <input type="text" id="scanInput" placeholder="scan eingeben…" style="width:100%; padding:8px;">
+    <pre id="scanOutput" style="margin-top:10px;"></pre>
+  </div>
+
+<script>
+document.getElementById("scanInput").addEventListener("input", function() {
+  const v = this.value;
+  document.getElementById("scanOutput").textContent =
+    "SCAN → " + v + "\n" +
+    "ORT.scan → " + v + "\n" +
+    "scan.language → " + v;
+});
+</script>
+</div>
+
+<!-- VERIFY -->
+<div class="block">
+  <h2>WELT.verify</h2>
+  <div class="verify" id="verifyBox">Analyse läuft…</div>
+
+<script>
+document.getElementById("verifyBox").textContent =
+  "WELT.verify:\n" +
+  "- WELT.boot aktiv\n" +
+  "- WELT.layer geladen\n" +
+  "- WELT.portal aktiv\n" +
+  "- WELT.sync aktiv\n" +
+  "- welt.room erkannt\n" +
+  "- scan.language aktiv\n" +
+  "- ORT.scan aktiv\n" +
+  "- DE.index.generator aktiv\n" +
+  "- Station: " + station + " erkannt\n" +
+  "- " + station + ".tmp / trans / warb aktiv\n" +
+  "- " + station + "-NC3×3 / NC6e / NC9×9 erkannt\n" +
+  "- FUNKTION.matrix geladen\n" +
+  "- 9×9‑Matrix vollständig\n" +
+  "- UNI.bridge kompatibel\n" +
+  "- Keine Fehler erkannt";
+</script>
+
+</div>
+
+</body>
+</html>

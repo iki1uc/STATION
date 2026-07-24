@@ -1,0 +1,8 @@
+[C.RESPO]
+version = 1.0
+type    = "praesens-axiom"
+
+axiom = ["DA","NE","BEN"]
+role  = "praesens"
+output = "C.RESPO.final"
+state  = "active"

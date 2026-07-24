@@ -1,0 +1,27 @@
+[WELT.portal]
+version = 1.0
+type    = "welt-core"
+zero    = 0
+
+welt.name   = "WELT"
+welt.title  = "Global Portal System"
+welt.mode   = ["meta","eden","layer","sync","world"]
+
+welt.bind = [
+  "port.eden",
+  "HI.layer",
+  "screen.room",
+  "port.visuals",
+  "DE.index.generator"
+]
+
+welt.layers = [
+  "eden.port.final",
+  "HI.layer.final",
+  "screen.room.final",
+  "visuals.final",
+  "EDEN.index.final"
+]
+
+welt.output = "WELT.portal.final"
+welt.state  = "active"

@@ -1,0 +1,8 @@
+[X.RESPO]
+version = 1.0
+type    = "argument-axiom"
+
+axiom = ["4u","WHY","onu"]
+role  = "argument"
+output = "X.RESPO.final"
+state  = "active"

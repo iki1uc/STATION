@@ -1,0 +1,8 @@
+[Z.RESPO]
+version = 1.0
+type    = "fehler-axiom"
+
+axiom = ["error","ghost","assimilation"]
+role  = "fehler"
+output = "Z.RESPO.final"
+state  = "active"
