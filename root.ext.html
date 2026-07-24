@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION ROOT EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION ROOT EXT</h2>
+
+<p>ROOT ist der Master-Kern der gesamten STATION.</p>
+
+<pre id="rootInfo">Lade ROOT...</pre>
+
+<script src="root.ext.js"></script>
+
+<script>
+setTimeout(() => {
+    const root = window.STATION_ROOT_EXT;
+    document.getElementById("rootInfo").innerText =
+        JSON.stringify(root.cfg, null, 2);
+}, 500);
+</script>
+
+</body>
+</html>
