@@ -1,0 +1,32 @@
+{
+  "id": "STATION-RUNTIME",
+  "version": "1.0.0",
+  "build": "iki1uc-runtime",
+  "role": "RUNTIME-MASTER",
+
+  "loop": {
+    "enabled": true,
+    "interval": 100
+  },
+
+  "events": {
+    "tick": "RUNTIME_TICK",
+    "signal": "RUNTIME_SIGNAL",
+    "update": "RUNTIME_UPDATE",
+    "sync": "RUNTIME_SYNC"
+  },
+
+  "state": {
+    "system": "ACTIVE",
+    "modules": "READY",
+    "runtime": "IDLE"
+  },
+
+  "flow": {
+    "input": "RUNTIME_INPUT",
+    "process": "RUNTIME_PROCESS",
+    "output": "RUNTIME_OUTPUT"
+  },
+
+  "status": "RUNTIME_READY"
+}
