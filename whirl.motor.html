@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION WHIRL MOTOR</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION WHIRL MOTOR</h2>
+
+<p>Der WHIRL-Motor ist aktiv und steuert Spin, Spiral, Drift und Vector-Whirl.</p>
+
+<pre id="whirlInfo">Lade WHIRL...</pre>
+
+<script src="whirl.motor.js"></script>
+
+<script>
+setTimeout(() => {
+    const whirl = window.STATION_WHIRL_MOTOR;
+    document.getElementById("whirlInfo").innerText =
+        JSON.stringify(whirl.cfg, null, 2);
+}, 500);
+</script>
+
+</body>
+</html>
