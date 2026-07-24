@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION UNI EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION UNI EXT</h2>
+
+<p>UNI verwaltet universelle Ebenen und Meta-Layer der STATION.</p>
+
+<pre id="uniInfo">Lade UNI...</pre>
+
+<button onclick="testLevel()">Ebene Test</button>
+<button onclick="testMeta()">Meta Test</button>
+
+<script src="uni.ext.js"></script>
+
+<script>
+setTimeout(() => {
+    const uni = window.STATION_UNI_EXT;
+    document.getElementById("uniInfo").innerText =
+        JSON.stringify(uni.cfg, null, 2);
+}, 500);
+
+function testLevel() {
+    const uni = window.STATION_UNI_EXT;
+    const result = uni.level("system");
+    alert(JSON.stringify(result, null, 2));
+}
+
+function testMeta() {
+    const uni = window.STATION_UNI_EXT;
+    const result = uni.meta("world");
+    alert(JSON.stringify(result, null, 2));
+}
+</script>
+
+</body>
+</html>
