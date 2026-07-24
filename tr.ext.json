@@ -1,0 +1,30 @@
+{
+  "id": "STATION-TR-EXT",
+  "instance": "iki1uc",
+  "role": "TR-MASTER",
+
+  "transitions": {
+    "world_to_uni": "TRANS_WU",
+    "uni_to_xi": "TRANS_UX",
+    "xi_to_tr": "TRANS_XT",
+    "tr_to_root": "TRANS_TR",
+    "reset": "TRANS_RESET"
+  },
+
+  "layers": {
+    "world": "STATION/world.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "xi": "STATION/xi.ext.js",
+    "root": "STATION/root.ext.js",
+    "api": "STATION/api.core.js",
+    "livebridge": "STATION/livebridge.js"
+  },
+
+  "routing": {
+    "mode": "transform",
+    "priority": "meta",
+    "fallback": "root"
+  },
+
+  "status": "READY"
+}
