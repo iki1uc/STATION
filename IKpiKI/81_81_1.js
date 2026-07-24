@@ -1,0 +1,19 @@
+export function geoAxes(Phi, phi, phi2, phiinfty) {
+    return { Phi, phi, phi2, phiinfty };
+}
+
+export function geoLAGE(Phi, phi, phi2, phiinfty) {
+    return { x: Phi * 9, y: phi * 9, z: phiinfty * 9 };
+}
+
+export function geoORT(Phi, phi, phi2, phiinfty) {
+    return { ortX: Phi * phi, ortY: phi2 * phiinfty };
+}
+
+export function geoMeta(Phi, phi, phi2, phiinfty) {
+    return {
+        axes: geoAxes(Phi, phi, phi2, phiinfty),
+        lage: geoLAGE(Phi, phi, phi2, phiinfty),
+        ort: geoORT(Phi, phi, phi2, phiinfty)
+    };
+}
