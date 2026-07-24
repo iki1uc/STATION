@@ -1,0 +1,26 @@
+{
+  "id": "STATION-RESPO-MOTOR-HOOK",
+  "instance": "iki1uc",
+  "respo": {
+    "1": "scan.respo.core.json",
+    "2": "respo.bind.json",
+    "3": "nc.respo.index.json1",
+    "4": "score.core.json",
+    "5": "nc.state.json",
+    "6": "nc.vector.json",
+    "7": "iki1uc.pipe.index.html",
+    "8": "nc.tmp.index.json",
+    "9": "nc.raw.json"
+  },
+  "motor": {
+    "pipe": "STATION/PIPE/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "tmp": "STATION/tmp/",
+    "rom": "STATION/ROOT/",
+    "ki": "STATION/4u/",
+    "de": "STATION/DE/",
+    "en": "STATION/EN/"
+  },
+  "status": "READY"
+}
