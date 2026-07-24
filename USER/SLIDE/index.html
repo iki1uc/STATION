@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>SLIDE · TEMP INDEX · iki1uc</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+h1 { color:#6cf; margin-bottom:30px; }
+.block { background:#111; border:1px solid #333; padding:20px; margin-bottom:25px; border-radius:8px; }
+.title { font-size:20px; color:#6cf; margin-bottom:10px; }
+pre { background:#000; border-left:3px solid #6cf; padding:12px; white-space:pre-wrap; }
+</style>
+
+<!-- CORE MODULES -->
+<script src="tmp.hdf.resolver.js"></script>
+<script type="module" src="full.js"></script>
+<script type="module" src="transform.js"></script>
+
+</head>
+<body>
+
+<h1>SLIDE · TEMPORÄRE INDEX · iki1uc</h1>
+
+<div class="block">
+    <div class="title">FULL ENGINE (12e)</div>
+    <pre id="full"></pre>
+</div>
+
+<div class="block">
+    <div class="title">6e</div>
+    <pre id="sixE"></pre>
+</div>
+
+<div class="block">
+    <div class="title">6d</div>
+    <pre id="sixD"></pre>
+</div>
+
+<div class="block">
+    <div class="title">12e (faktorisiert)</div>
+    <pre id="twelveE"></pre>
+</div>
+
+<div class="block">
+    <div class="title">GEOMETRIE (geom)</div>
+    <pre id="geom"></pre>
+</div>
+
+<div class="block">
+    <div class="title">FREQUENZ (freq)</div>
+    <pre id="freq"></pre>
+</div>
+
+<div class="block">
+    <div class="title">81.room</div>
+    <pre id="matrix"></pre>
+</div>
+
+<div class="block">
+    <div class="title">TMP‑Resolver</div>
+    <pre id="resolver"></pre>
+</div>
+
+<div class="block">
+    <div class="title">TMP‑Knotenpunkt</div>
+    <pre id="tmp"></pre>
+</div>
+
+<div class="block">
+    <div class="title">Koordinaten</div>
+    <pre id="coord"></pre>
+</div>
+
+<div class="block">
+    <div class="title">Korrektur</div>
+    <pre id="cor"></pre>
+</div>
+
+<div class="block">
+    <div class="title">NAT</div>
+    <pre id="nat"></pre>
+</div>
+
+<div class="block">
+    <div class="title">DI</div>
+    <pre id="di"></pre>
+</div>
+
+<div class="block">
+    <div class="title">Identität</div>
+    <pre id="id"></pre>
+</div>
+
+<script>
+(async function () {
+
+    /* TRANSFORMATION */
+    const t = TRANSFORM_12e_6e_6d_12e(12);
+
+    document.getElementById("full").innerText = JSON.stringify(t.full, null, 2);
+    document.getElementById("sixE").innerText = JSON.stringify(t.sixE, null, 2);
+    document.getElementById("sixD").innerText = JSON.stringify(t.sixD, null, 2);
+    document.getElementById("twelveE").innerText = JSON.stringify(t.twelve

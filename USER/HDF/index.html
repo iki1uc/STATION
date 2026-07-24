@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>HDF · 81‑Matrix · iki1uc</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+h1 { color:#6cf; letter-spacing:4px; margin-bottom:30px; }
+.block { background:#111; border:1px solid #333; padding:25px; margin-bottom:30px; border-radius:8px; }
+.title { font-size:22px; color:#6cf; margin-bottom:10px; }
+pre { background:#000; border-left:3px solid #6cf; padding:15px; margin-top:10px; white-space:pre-wrap; }
+a { color:#6cf; text-decoration:none; font-weight:bold; }
+</style>
+
+<script src="tmp.hdf.resolver.js"></script>
+
+</head>
+<body>
+
+<h1>HDF · 81‑Matrix · iki1uc</h1>
+
+<div class="block">
+    <div class="title">81‑Matrix</div>
+    <pre id="matrix"></pre>
+</div>
+
+<div class="block">
+    <div class="title">TMP‑Resolver</div>
+    <pre id="resolver"></pre>
+</div>
+
+<div class="block">
+    <div class="title">TMP‑Knotenpunkt</div>
+    <pre id="tmp"></pre>
+</div>
+
+<script>
+(async function () {
+
+    /* 81.room laden */
+    const matrix = await fetch("81.room").then(r => r.text()).catch(() => "Fehler");
+    document.getElementById("matrix").innerText = matrix;
+
+    /* TMP‑Liste laden */
+    const tmpList = await fetch("tmp.list.json").then(r => r.json()).catch(() => []);
+    document.getElementById("tmp").innerText = JSON.stringify(tmpList, null, 2);
+
+    /* Resolver ausführen */
+    const results = [];
+    for (const file of tmpList) {
+        const content = await fetch("../tmp/" + file).then(r => r.text()).catch(() => "");
+        const res = await TMP_HDF_RESOLVER.resolve(file, content);
+        results.push(res);
+    }
+
+    document.getElementById("resolver").innerText =
+        JSON.stringify(results, null, 2);
+
+})();
+</script>
+
+</body>
+</html>
