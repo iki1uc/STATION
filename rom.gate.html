@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION ROM GATE</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION ROM GATE</h2>
+
+<p>ROM Gate steuert ROM → TMP, ROM → PIPE, ROM → ROOT, ROM → API.</p>
+
+<pre id="romGateInfo">Lade ROM Gate...</pre>
+
+<button onclick="testRoute()">Route Test</button>
+<button onclick="testHotSwap()">HotSwap Test</button>
+
+<script src="rom.gate.js"></script>
+
+<script>
+setTimeout(() => {
+    const gate = window.STATION_ROM_GATE;
+    document.getElementById("romGateInfo").innerText =
+        JSON.stringify(gate.cfg, null, 2);
+}, 500);
+
+function testRoute() {
+    const gate = window.STATION_ROM_GATE;
+    const result = gate.route("ROM");
+    alert(JSON.stringify(result, null, 2));
+}
+
+function testHotSwap() {
+    const gate = window.STATION_ROM_GATE;
+    const result = gate.hotswap("ROM", "TMP", "core.json");
+    alert(JSON.stringify(result, null, 2));
+}
+</script>
+
+</body>
+</html>
