@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION TMP ROUTER</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION TMP ROUTER</h2>
+
+<p>Der TMP-Router ist aktiv und steuert TMP → KI/DE/EN/GATE/SEND sowie TMP↔ROM HotSwap.</p>
+
+<pre id="tmpInfo">Lade TMP...</pre>
+
+<script src="tmp.router.js"></script>
+
+<script>
+setTimeout(() => {
+    const tmp = window.STATION_TMP_ROUTER;
+    document.getElementById("tmpInfo").innerText =
+        JSON.stringify(tmp.cfg, null, 2);
+}, 500);
+</script>
+
+</body>
+</html>
