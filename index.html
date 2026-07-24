@@ -1,92 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<title>STATION MASTER INDEX</title>
+<meta charset="UTF-8">
+<title>STATION · CORE · iki1uc</title>
 
 <style>
-body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
-h1 { color:#6cf; }
-h2 { color:#6cf; margin-top:40px; }
-pre { background:#111; border:1px solid #333; padding:12px; }
-a { color:#6cf; text-decoration:none; }
-a:hover { color:#0f0; }
-.module-box {
-    background:#111;
-    border:1px solid #333;
-    padding:12px;
-    margin-bottom:20px;
-}
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+h1 { color:#6cf; margin-bottom:30px; }
+.block { background:#111; border:1px solid #333; padding:20px; margin-bottom:25px; border-radius:8px; }
+.title { font-size:20px; color:#6cf; margin-bottom:10px; }
+pre { background:#000; border-left:3px solid #6cf; padding:12px; white-space:pre-wrap; }
 </style>
 
-</head>
+<!-- CORE MODULES -->
+<script src="../SLIDE/tmp.hdf.resolver.js"></script>
+<script type="module" src="../SLIDE/full.js"></script>
+<script type="module" src="../SLIDE/transform.js"></script>
+<script type="module" src="../SLIDE/geom.js"></script>
+<script type="module" src="respo.hook.js"></script>
 
+</head>
 <body>
 
-<h1>STATION MASTER INDEX</h1>
-<p>Die zentrale Oberfläche der gesamten STATION.</p>
+<h1>STATION · CORE · iki1uc</h1>
 
-<div id="stationModules"></div>
+<div class="block">
+    <div class="title">STATION‑LAGE</div>
+    <pre id="station"></pre>
+</div>
+
+<div class="block">
+    <div class="title">HDF‑LAGE</div>
+    <pre id="hdf"></pre>
+</div>
+
+<div class="block">
+    <div class="title">SLIDE‑ENGINE (12e)</div>
+    <pre id="full"></pre>
+</div>
+
+<div class="block">
+    <div class="title">6e</div>
+    <pre id="sixE"></pre>
+</div>
+
+<div class="block">
+    <div class="title">6d</div>
+    <pre id="sixD"></pre>
+</div>
+
+<div class="block">
+    <div class="title">GEOMETRIE</div>
+    <pre id="geom"></pre>
+</div>
+
+<div class="block">
+    <div class="title">station‑respo</div>
+    <pre id="respo"></pre>
+</div>
+
+<div class="block">
+    <div class="title">TMP‑Resolver</div>
+    <pre id="resolver"></pre>
+</div>
 
 <script>
-const modules = {
-    /* --- CORE SYSTEM --- */
-    "SYSTEM": "STATION/system.ext.html",
-    "CORE": "STATION/core.ext.html",
-    "ROOT": "STATION/root.ext.html",
-    "HOME": "STATION/home.ext.html",
+(async function () {
 
-    /* --- LOGIC LAYERS --- */
-    "WORLD": "STATION/world.ext.html",
-    "UNI": "STATION/uni.ext.html",
-    "XI": "STATION/xi.ext.html",
-    "TR": "STATION/tr.ext.html",
+    /* STATION-LAGE */
+    document.getElementById("station").innerText =
+        "STATION = CORE / PIPE / LIVE / RESPO / GATE / TR / UNI / WORLD";
 
-    /* --- MODULE ENGINES --- */
-    "PIPE": "STATION/PIPE/",
-    "TMP": "STATION/tmp/",
-    "VECTOR": "STATION/VECTOR/",
-    "WHIRL": "STATION/WHIRL/",
+    /* HDF-LAGE */
+    const hdfMatrix = await fetch("../HDF/81.room").then(r => r.text());
+    document.getElementById("hdf").innerText = hdfMatrix;
 
-    /* --- IO / FLOW --- */
-    "API": "STATION/api.core.html",
-    "SEND": "STATION/send.ext.html",
-    "PUSH": "STATION/push.ext.html",
-    "GATE": "STATION/gate.ext.html",
-    "RDY": "STATION/rdy.ext.html",
-    "ROM-GATE": "STATION/rom.gate.html",
+    /* ENGINE */
+    const t = TRANSFORM_12e_6e_6d_12e(12);
 
-    /* --- BUILD / RELEASE / DEPLOY --- */
-    "FULL BUILD": "STATION/station.build.html",
-    "RELEASE": "STATION/release.html",
-    "DEPLOY": "STATION/deploy.html",
-    "INSTALLER": "STATION/installer.html",
-    "SETUP": "STATION/setup.html",
-    "STARTER": "STATION/starter.html",
-    "BOOTLOADER": "STATION/bootloader.html",
+    document.getElementById("full").innerText = JSON.stringify(t.full, null, 2);
+    document.getElementById("sixE").innerText = JSON.stringify(t.sixE, null, 2);
+    document.getElementById("sixD").innerText = JSON.stringify(t.sixD, null, 2);
 
-    /* --- RUNTIME / LIVE --- */
-    "RUNTIME": "STATION/runtime.html",
-    "LIVE": "STATION/live.html",
-    "LIVEBRIDGE": "STATION/livebridge.html"
-};
+    /* GEOMETRIE */
+    const geom = GEOM(t.sixD.x, t.sixD.y, t.sixD.z);
+    document.getElementById("geom").innerText = JSON.stringify(geom, null, 2);
 
-const container = document.getElementById("stationModules");
+    /* station-respo */
+    const stationRespo = {
+        stability: t.sixD.y > t.sixD.x,
+        vector: geom.vector,
+        angles: geom,
+        nat: t.sixD.z * 12,
+        di: t.sixD.x + t.sixD.y + t.sixD.z,
+        coord: t.sixD
+    };
+    document.getElementById("respo").innerText =
+        JSON.stringify(stationRespo, null, 2);
 
-for (const key in modules) {
-    const box = document.createElement("div");
-    box.className = "module-box";
+    /* TMP LIST */
+    const tmpList = await fetch("../HDF/tmp.list.json").then(r => r.json());
 
-    const title = document.createElement("h2");
-    title.innerText = key;
-    box.appendChild(title);
+    /* RESOLVER */
+    const results = [];
+    for (const file of tmpList) {
+        const content = await fetch("file://" + "D:/tmp/" + file)
+            .then(r => r.text())
+            .catch(() => "");
+        const res = await TMP_HDF_RESOLVER.resolve(file, content);
+        results.push(res);
+    }
+    document.getElementById("resolver").innerText =
+        JSON.stringify(results, null, 2);
 
-    const link = document.createElement("a");
-    link.href = modules[key];
-    link.innerText = "Öffnen";
-    box.appendChild(link);
-
-    container.appendChild(box);
-}
+})();
 </script>
 
 </body>
