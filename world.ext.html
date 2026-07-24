@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION WORLD EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION WORLD EXT</h2>
+
+<p>WORLD verwaltet globale Zonen und Layer der STATION.</p>
+
+<pre id="worldInfo">Lade WORLD...</pre>
+
+<button onclick="testZone()">Zone Test</button>
+<button onclick="testLayer()">Layer Test</button>
+
+<script src="world.ext.js"></script>
+
+<script>
+setTimeout(() => {
+    const world = window.STATION_WORLD_EXT;
+    document.getElementById("worldInfo").innerText =
+        JSON.stringify(world.cfg, null, 2);
+}, 500);
+
+function testZone() {
+    const world = window.STATION_WORLD_EXT;
+    const result = world.zone("city");
+    alert(JSON.stringify(result, null, 2));
+}
+
+function testLayer() {
+    const world = window.STATION_WORLD_EXT;
+    const result = world.layer("vector");
+    alert(JSON.stringify(result, null, 2));
+}
+</script>
+
+</body>
+</html>
