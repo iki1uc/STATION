@@ -29,21 +29,25 @@ a:hover { color:#0f0; }
 
 <script>
 const modules = {
+    /* --- CORE SYSTEM --- */
     "SYSTEM": "STATION/system.ext.html",
     "CORE": "STATION/core.ext.html",
     "ROOT": "STATION/root.ext.html",
     "HOME": "STATION/home.ext.html",
 
+    /* --- LOGIC LAYERS --- */
     "WORLD": "STATION/world.ext.html",
     "UNI": "STATION/uni.ext.html",
     "XI": "STATION/xi.ext.html",
     "TR": "STATION/tr.ext.html",
 
+    /* --- MODULE ENGINES --- */
     "PIPE": "STATION/PIPE/",
     "TMP": "STATION/tmp/",
     "VECTOR": "STATION/VECTOR/",
     "WHIRL": "STATION/WHIRL/",
 
+    /* --- IO / FLOW --- */
     "API": "STATION/api.core.html",
     "SEND": "STATION/send.ext.html",
     "PUSH": "STATION/push.ext.html",
@@ -51,10 +55,19 @@ const modules = {
     "RDY": "STATION/rdy.ext.html",
     "ROM-GATE": "STATION/rom.gate.html",
 
+    /* --- BUILD / RELEASE / DEPLOY --- */
     "FULL BUILD": "STATION/station.build.html",
     "RELEASE": "STATION/release.html",
     "DEPLOY": "STATION/deploy.html",
-    "INSTALLER": "STATION/installer.html"
+    "INSTALLER": "STATION/installer.html",
+    "SETUP": "STATION/setup.html",
+    "STARTER": "STATION/starter.html",
+    "BOOTLOADER": "STATION/bootloader.html",
+
+    /* --- RUNTIME / LIVE --- */
+    "RUNTIME": "STATION/runtime.html",
+    "LIVE": "STATION/live.html",
+    "LIVEBRIDGE": "STATION/livebridge.html"
 };
 
 const container = document.getElementById("stationModules");
