@@ -1,0 +1,30 @@
+{
+  "id": "STATION-TMP-ROUTER",
+  "instance": "iki1uc",
+
+  "tmp": {
+    "path": "STATION/tmp/",
+    "mode": "router-cache",
+    "autosave": true,
+    "autosync": true,
+    "priority": "high"
+  },
+
+  "hotswap": {
+    "enabled": true,
+    "rom": "STATION/ROOT/",
+    "pipe": "STATION/PIPE/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/"
+  },
+
+  "channels": {
+    "ki": "STATION/4u/",
+    "de": "STATION/DE/",
+    "en": "STATION/EN/",
+    "gate": "STATION/GATE/",
+    "send": "STATION/SEND/"
+  },
+
+  "status": "READY"
+}
