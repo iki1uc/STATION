@@ -1,0 +1,19 @@
+{
+  "id": "STATION-VECTOR-HOOK",
+  "instance": "iki1uc",
+  "vector": {
+    "pipe": "VECTOR.pipe.js",
+    "axis": ["X", "Y", "Z", "UNI", "XI"],
+    "mode": "whirl",
+    "speed": "12e",
+    "gain": true
+  },
+  "channels": {
+    "ki": "STATION/4u/",
+    "de": "STATION/DE/",
+    "en": "STATION/EN/",
+    "tmp": "STATION/tmp/",
+    "rom": "STATION/ROOT/"
+  },
+  "status": "READY"
+}
