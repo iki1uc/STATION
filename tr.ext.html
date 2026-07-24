@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION TR EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION TR EXT</h2>
+
+<p>TR steuert Meta-Transitionen und universelle Layer.</p>
+
+<pre id="trInfo">Lade TR...</pre>
+
+<button onclick="testTransition()">Transition Test</button>
+<button onclick="testLayer()">Layer Test</button>
+
+<script src="tr.ext.js"></script>
+
+<script>
+setTimeout(() => {
+    const tr = window.STATION_TR_EXT;
+    document.getElementById("trInfo").innerText =
+        JSON.stringify(tr.cfg, null, 2);
+}, 500);
+
+function testTransition() {
+    const tr = window.STATION_TR_EXT;
+    const result = tr.transition("uni_to_xi");
+    alert(JSON.stringify(result, null, 2));
+}
+
+function testLayer() {
+    const tr = window.STATION_TR_EXT;
+    const result = tr.layer("xi");
+    alert(JSON.stringify(result, null, 2));
+}
+</script>
+
+</body>
+</html>
