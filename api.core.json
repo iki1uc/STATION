@@ -1,0 +1,34 @@
+{
+  "id": "STATION-API-CORE",
+  "instance": "iki1uc",
+  "role": "API-MASTER",
+
+  "endpoints": {
+    "root": "root.ext.json",
+    "pipe": "pipe.bind.json",
+    "respo": "respo.hook.json",
+    "vector": "vector.hook.json",
+    "whirl": "whirl.motor.json",
+    "tmp": "tmp.router.json",
+    "livebridge": "livebridge.json",
+    "ki": "4u/",
+    "de": "DE/",
+    "en": "EN/",
+    "gate": "GATE/",
+    "send": "SEND/",
+    "push": "PUSH/",
+    "run8": "RUN8/",
+    "welt": "WELT/",
+    "uni": "UNI/",
+    "xi": "XI/",
+    "tr": "TR/"
+  },
+
+  "routing": {
+    "mode": "auto",
+    "priority": "API",
+    "fallback": "root"
+  },
+
+  "status": "READY"
+}
