@@ -1,0 +1,19 @@
+{
+  "id": "STATION-WHIRL-MOTOR",
+  "instance": "iki1uc",
+  "whirl": {
+    "modes": ["spin", "spiral", "drift", "vector-whirl"],
+    "default": "vector-whirl",
+    "speed": "12e",
+    "axis": ["X", "Y", "Z", "UNI", "XI"]
+  },
+  "channels": {
+    "vector": "STATION/VECTOR/",
+    "ki": "STATION/4u/",
+    "de": "STATION/DE/",
+    "en": "STATION/EN/",
+    "tmp": "STATION/tmp/",
+    "rom": "STATION/ROOT/"
+  },
+  "status": "READY"
+}
