@@ -1,0 +1,6 @@
+{
+  "websocket_url": "wss://live.example.com",
+  "rest_url": "https://api.example.com/live",
+  "pulse_interval": 1000
+}
+
