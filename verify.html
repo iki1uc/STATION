@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Verify · STATION</title>
+
+<script type="module">
+import { loadUniversal } from "../INDEX/loader.js";
+await loadUniversal();
+
+const { RUN8, VECTOR, KANAL, ARG, M81, MRAW, MFULL, FOURU } = window.AnPI;
+
+const run8 = RUN8.RUN8_bind({
+  pulse(){ return 1; },
+  axis(){ return "N"; },
+  sequence(){ return "SEQ"; }
+});
+
+const vec = VECTOR.VECTOR_pipe({ axis:"N" });
+const kanal = KANAL.kanal(vec);
+
+window.NC_ROOM_RESULT = {
+  station: "STATION",
+  run8,
+  vec,
+  kanal,
+  arg: ARG.ARG("ok"),
+  xarg: ARG.xARG("test"),
+  xarg4u: ARG.XARG("validate", FOURU),
+  matrix: {
+    raw: MRAW.default,
+    m81: M81.default,
+    full: MFULL.default
+  }
+};
+</script>
+
+</head>
+<body>
+Verify läuft…
+</body>
+</html>
