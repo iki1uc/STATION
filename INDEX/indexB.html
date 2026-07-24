@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX B · MEGA · 12ALL · RUN8 · ASCII‑WARP</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+h1 { color:#f0f; text-align:center; }
+.box { background:#111; padding:20px; margin:20px 0; border-left:3px solid #f0f; }
+pre { white-space:pre; font-size:15px; line-height:17px; }
+</style>
+
+<script src="core/MEGA_INDEX.js"></script>
+<script src="core/12ALL.master.js"></script>
+<script src="core/RUN8.js"></script>
+
+</head>
+
+<body>
+
+<h1>INDEX B · MEGA · 12ALL · RUN8</h1>
+
+<div id="mega_out" class="box"></div>
+<div id="geo_warp" class="box"></div>
+
+<script>
+let f = 0;
+
+function geoWarp(){
+    f++;
+    const wave = "~".repeat((f%10)+5);
+    const tunnel = "●".repeat((f%6)+3);
+
+    return `
+GEO‑WARP‑TUNNEL (frame ${f})
+
+Depth:
+${tunnel}
+
+Warp:
+${wave}
+
+Pulse:
+${"● ".repeat((f%5)+2)}
+`;
+}
+
+setInterval(()=>{
+    const mega = MEGA_INDEX.start();
+    document.getElementById("mega_out").textContent =
+        JSON.stringify(mega, null, 2);
+
+    document.getElementById("geo_warp").textContent = geoWarp();
+}, 1500);
+</script>
+
+</body>
+</html>

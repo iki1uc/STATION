@@ -1,0 +1,26 @@
+RESPO = HTML.raw
+NAME = HTML
+ROOT = iki1uc
+SYSTEM = 6E
+MODUL = HTML
+DIM = D2
+
+ROLLE = Struktur / Ordnung / Syntax / Routing
+FUNKTION = Routing-Matrix für C6 / QI / IQQ / GES / DES / MAX-MOVE
+
+C6-MOVE = aktiv
+QI = aktiv
+IQQ = aktiv
+GES = aktiv
+DES = aktiv
+MAX-MOVE = aktiv
+
+POSITION = D2 (Struktur-Achse)
+PARITY = D4 ↔ D5
+TMP-LAEUFER = SYQ
+
+STABILITAET = 12e
+MODE = REAL-LIVE
+
+STATUS = STABIL
+READY = 100%

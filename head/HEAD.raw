@@ -1,0 +1,26 @@
+RESPO = HEAD.raw
+NAME = HEAD
+ROOT = iki1uc
+SYSTEM = 6E
+MODUL = HEAD
+DIM = D1
+
+ROLLE = Steuerung / Logik / Kontrolle / Ausrichtung
+FUNKTION = Bewusstseins-Achse für C6 / QI / IQQ / GES / DES / MAX-MOVE
+
+C6-MOVE = aktiv
+QI = aktiv
+IQQ = aktiv
+GES = aktiv
+DES = aktiv
+MAX-MOVE = aktiv
+
+POSITION = D1 (Bewusstseins-Achse)
+PARITY = D4 ↔ D5
+TMP-LAEUFER = SYQ
+
+STABILITAET = 12e
+MODE = REAL-LIVE
+
+STATUS = STABIL
+READY = 100%

@@ -1,0 +1,22 @@
+RESPO = style.room
+ROOM = style.D0
+ROOT = iki1uc
+SYSTEM = 6E
+DIM = D0
+
+FUNKTION = Formraum für Oberfläche / Erscheinung / Layout
+AXIS = Form-Achse
+FLOW = Form → Struktur → Darstellung
+
+C6-MOVE = Eingang
+QI = Eingang
+IQQ = Eingang
+GES = Eingang
+DES = Eingang
+MAX-MOVE = Eingang
+
+TMP-LAEUFER = SYQ
+PARITY = D4 ↔ D5
+
+STATUS = STABIL
+READY = 100%

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX A · ALL · VECTOR · RUN8 · ASCII‑GEO</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+h1 { color:#6cf; text-align:center; }
+.box { background:#111; padding:20px; margin:20px 0; border-left:3px solid #6cf; }
+pre { white-space:pre; font-size:15px; line-height:17px; }
+</style>
+
+<script src="core/GAM.core.js"></script>
+<script src="core/VECTOR.core.js"></script>
+<script src="core/VECTOR.respo.js"></script>
+<script src="core/VECTOR.render.js"></script>
+<script src="core/VECTOR.81.js"></script>
+<script src="core/VECTOR.optimizer.js"></script>
+
+<script src="core/INDEX.respo.js"></script>
+<script src="core/INDEX.portal.js"></script>
+<script src="core/INDEX.hyperraum.js"></script>
+<script src="core/INDEX.render.js"></script>
+
+<script src="core/ALL.monitor.js"></script>
+<script src="ALL.core.js"></script>
+
+<script src="core/MEGA_INDEX.js"></script>
+<script src="core/12ALL.master.js"></script>
+<script src="core/RUN8.js"></script>
+
+</head>
+
+<body>
+
+<h1>INDEX A · ALL · VECTOR · RUN8</h1>
+
+<div id="fusion_out" class="box"></div>
+<div id="geo_anim" class="box"></div>
+<pre id="move_history"></pre>
+
+<script>
+let history = [];
+let frame = 0;
+
+function geoAnim(){
+    frame++;
+    const d = ["●","○","·","∙","•"];
+    const p = (i)=> d[(frame+i)%d.length];
+    const glow = frame%2 ? "✦" : "✧";
+    const raster = frame%3 ? "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓" : "██████████████████";
+
+    return `
+GEO‑3D‑ASCII (frame ${frame})
+
+X‑Axis ─── ${p(1)} ${p(2)} ${p(3)}
+Y‑Axis ─── ${p(2)} ${p(3)} ${p(4)}
+Z‑Axis ─── ${p(3)} ${p(4)} ${p(5)}
+
+ROTATION:
+${" ".repeat(frame%12)}↻
+
+ANIME‑GLOW:
+${glow} ${glow} ${glow} ${glow}
+
+AMIGA‑RASTER:
+${raster}
+${raster}
+`;
+}
+
+setInterval(()=>{
+    const fusion = RUN8.start();
+    history.push(fusion.index[0].id);
+
+    document.getElementById("fusion_out").textContent =
+        JSON.stringify(fusion, null, 2);
+
+    document.getElementById("geo_anim").textContent = geoAnim();
+
+    document.getElementById("move_history").textContent =
+        history.slice(-20).join(" → ");
+}, 2000);
+</script>
+
+</body>
+</html>

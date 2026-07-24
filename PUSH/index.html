@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>PUSH · Aktivierungsstation · 12e · Hyperraum</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+nav a { color:#6cf; margin-right:20px; text-decoration:none; font-size:20px; cursor:pointer; }
+.box { background:#111; padding:20px; margin:20px 0; border-left:3px solid #6cf; display:none; }
+pre { white-space:pre; }
+h2 { color:#6cf; }
+</style>
+
+<script src="PUSH.core.js"></script>
+<script src="PUSH.state.js"></script>
+<script src="PUSH.pipe.js"></script>
+
+<script src="GEO.js"></script>
+<script src="EFFECT.js"></script>
+
+<script src="QI.js"></script>
+<script src="IQQ.js"></script>
+<script src="OCTA.js"></script>
+<script src="12e.js"></script>
+
+</head>
+
+<body>
+
+<h1>PUSH · Aktivierungsstation · 12e · Hyperraum</h1>
+
+<nav>
+    <a onclick="show('core')">CORE</a>
+    <a onclick="show('state')">STATE</a>
+    <a onclick="show('pipe')">PIPE</a>
+    <a onclick="show('result')">RESULT</a>
+    <a onclick="show('geo')">GEO</a>
+    <a onclick="show('eff')">Effekte</a>
+    <a onclick="show('qi')">QI</a>
+    <a onclick="show('iqq')">IQQ</a>
+    <a onclick="show('octa')">OCTA</a>
+    <a onclick="show('e12')">12e</a>
+</nav>
+
+<div id="core" class="box"></div>
+<div id="state" class="box"></div>
+<div id="pipe" class="box"></div>
+<div id="result" class="box"></div>
+
+<div id="geo" class="box"></div>
+<div id="eff" class="box"></div>
+
+<div id="qi" class="box"></div>
+<div id="iqq" class="box"></div>
+<div id="octa" class="box"></div>
+<div id="e12" class="box"></div>
+
+<script>
+function show(id){
+    document.querySelectorAll('.box').forEach(b => b.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+
+(async () => {
+
+    document.getElementById("core").innerHTML =
+        "<h2>PUSH.core</h2><pre>" + JSON.stringify(PUSH_CORE.start(), null, 2) + "</pre>";
+
+    document.getElementById("state").innerHTML =
+        "<h2>PUSH.state</h2><pre>" + JSON.stringify(PUSH_STATE.start(), null, 2) + "</pre>";
+
+    document.getElementById("pipe").innerHTML =
+        "<h2>PUSH.pipe</h2><pre>" + JSON.stringify(PUSH_PIPE.start(), null, 2) + "</pre>";
+
+    const result = await fetch("PUSH.result.json").then(r => r.json());
+    document.getElementById("result").innerHTML =
+        "<h2>PUSH.result</h2><pre>" + JSON.stringify(result, null, 2) + "</pre>";
+
+    document.getElementById("geo").innerHTML =
+        "<h2>GEO</h2><pre>" + JSON.stringify(GEO.start(), null, 2) + "</pre>";
+
+    document.getElementById("eff").innerHTML =
+        "<h2>Effekte</h2><pre>" + JSON.stringify(EFFECT.start(), null, 2) + "</pre>";
+
+    document.getElementById("qi").innerHTML =
+        "<h2>QI</h2><pre>" + JSON.stringify(QI.start(), null, 2) + "</pre>";
+
+    document.getElementById("iqq").innerHTML =
+        "<h2>IQQ</h2><pre>" + JSON.stringify(IQQ.start(), null, 2) + "</pre>";
+
+    document.getElementById("octa").innerHTML =
+        "<h2>OCTA</h2><pre>" + JSON.stringify(OCTA.start(), null, 2) + "</pre>";
+
+    document.getElementById("e12").innerHTML =
+        "<h2>12e</h2><pre>" + JSON.stringify(E12.start(), null, 2) + "</pre>";
+
+    show('core');
+
+})();
+</script>
+
+</body>
+</html>

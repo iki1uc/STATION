@@ -1,0 +1,23 @@
+RESPO = style.help
+HELP · style · D0
+
+style ist die Form-Ebene des 6E-Würfels.
+Sie filtert alle Eingangs-Moves.
+
+style verarbeitet:
+- C6-MOVE
+- QI
+- IQQ
+- GES
+- DES
+- MAX-MOVE
+
+FEHLER:
+- Wenn Oberfläche bricht → D0 prüfen
+- Wenn Darstellung driftet → SYQ prüfen
+- Wenn Parität falsch angezeigt wird → D4/D5 prüfen
+
+STATUS:
+style = STABIL
+READY = 100%
+MODE = REAL-LIVE

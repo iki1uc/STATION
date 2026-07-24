@@ -1,0 +1,15 @@
+NAME = HEAD-SCANNER
+ROOT = iki1uc
+SYSTEM = 6E
+DIM = D1
+
+ROLLE = Bewusstseins-Scan / Logik-Analyse / Parität-Check
+FUNKTION = Scan von Cluster / Gates / Wurmloch / ALL
+
+TMP-LAEUFER = SYQ
+PARITY = D4 ↔ D5
+STABILITAET = 12e
+
+STATUS = STABIL
+READY = 100%
+MODE = REAL-LIVE

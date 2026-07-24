@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ASCII · GEO · AMIGA · SHOW</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+pre { white-space:pre; font-size:16px; line-height:18px; }
+.box { background:#111; padding:20px; margin:20px 0; border-left:3px solid #6cf; }
+</style>
+
+</head>
+
+<body>
+
+<h1>ASCII · GEO · AMIGA · SHOW</h1>
+
+<div class="box"><pre id="geo3d"></pre></div>
+<div class="box"><pre id="amiga"></pre></div>
+<div class="box"><pre id="warp"></pre></div>
+<div class="box"><pre id="gta"></pre></div>
+
+<script>
+let f = 0;
+
+function geo3D(){
+    const d = ["●","○","·","∙","•"];
+    const p = (i)=> d[(f+i)%d.length];
+    return `
+GEO‑3D (frame ${f})
+X ─── ${p(1)} ${p(2)} ${p(3)}
+Y ─── ${p(2)} ${p(3)} ${p(4)}
+Z ─── ${p(3)} ${p(4)} ${p(5)}
+ROTATION: ${" ".repeat(f%10)}↻
+`;
+}
+
+function amigaScene(){
+    const bar = f%2 ? "██████████████████" : "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓";
+    return `
+AMIGA‑SCENE
+${bar}
+${bar}
+${bar}
+`;
+}
+
+function warpTunnel(){
+    return `
+WARP‑TUNNEL
+Depth: ${"●".repeat((f%6)+3)}
+Warp : ${"~".repeat((f%10)+5)}
+`;
+}
+
+function gta6(){
+    return `
+GTA‑6‑ASCII‑LIVE
+${f%2 ? "🚗──🏙──🔥" : "🔥──🚓──🏙"}
+`;
+}
+
+setInterval(()=>{
+    f++;
+
+    document.getElementById("geo3d").textContent = geo3D();
+    document.getElementById("amiga").textContent = amigaScene();
+    document.getElementById("warp").textContent = warpTunnel();
+    document.getElementById("gta").textContent = gta6();
+
+}, 150);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>HEAD · Scanner · D1 · RESPO</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:25px; }
+h1 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+</style>
+</head>
+
+<body>
+
+<h1>HEAD · Scanner · D1</h1>
+
+<pre id="scan-output">
+Lade HEAD‑Scan…
+</pre>
+
+<script src="./HEAD-SCANNER.js"></script>
+<script>
+document.getElementById("scan-output").textContent =
+    JSON.stringify(HEAD_SCANNER.run(), null, 4);
+</script>
+
+</body>
+</html>

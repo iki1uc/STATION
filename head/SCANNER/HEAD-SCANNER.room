@@ -1,0 +1,14 @@
+ROOM = HEAD.SCANNER.D1
+ROOT = iki1uc
+SYSTEM = 6E
+DIM = D1
+
+FUNKTION = Bewusstseinsraum für Scans / Logik / Kontrolle
+AXIS = Bewusstseins-Achse
+FLOW = Logik → Kontrolle → Ausrichtung
+
+TMP-LAEUFER = SYQ
+PARITY = D4 ↔ D5
+
+STATUS = STABIL
+READY = 100%

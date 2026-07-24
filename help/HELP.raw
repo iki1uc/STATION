@@ -1,0 +1,15 @@
+NAME = HELP
+ROOT = iki1uc
+SYSTEM = 6E
+MODUL = HELP
+DIM = META
+
+ROLLE = Ghost / Support / META-Schnittstelle
+FUNKTION = Neutraler Beobachter und Hilfsmodul für alle 6E-Ebenen
+
+POSITION = außerhalb der 6E-Matrix
+LINK = D4 (ANKER) + D5 (API)
+TMP-LAEUFER = SYQ
+
+STATUS = STABIL
+READY = 100%
