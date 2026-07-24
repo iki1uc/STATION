@@ -1,0 +1,37 @@
+{
+  "id": "STATION-ROOT-EXT",
+  "instance": "iki1uc",
+  "role": "MASTER-ROOT",
+
+  "registry": {
+    "pipe": "STATION/PIPE/",
+    "respo": "STATION/respo.hook.js",
+    "vector": "STATION/vector.hook.js",
+    "whirl": "STATION/whirl.motor.js",
+    "tmp": "STATION/tmp.router.js",
+    "livebridge": "STATION/livebridge.js",
+    "ki": "STATION/4u/",
+    "de": "STATION/DE/",
+    "en": "STATION/EN/"
+  },
+
+  "routing": {
+    "matrix": [
+      "ROM → PIPE → TMP → NC",
+      "TMP → PIPE → VECTOR → WHIRL",
+      "VECTOR → KI → DE → EN",
+      "PIPE → RESPO → ROOT",
+      "ROOT → LIVEBRIDGE → ALL"
+    ],
+    "priority": "ROOT"
+  },
+
+  "hotswap": {
+    "enabled": true,
+    "rom": "STATION/ROOT/",
+    "tmp": "STATION/tmp/",
+    "pipe": "STATION/PIPE/"
+  },
+
+  "status": "READY"
+}
