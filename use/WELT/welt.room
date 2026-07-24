@@ -1,0 +1,11 @@
+[WELT.room]
+version = 1.0
+type    = "welt-room"
+
+room.name   = "WELT.screen"
+room.layer  = "WELT.layer.final"
+room.mode   = ["screen","global","eden"]
+
+room.display = "WELT.portal.final"
+room.output  = "WELT.room.final"
+room.state   = "active"

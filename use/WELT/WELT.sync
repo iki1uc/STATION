@@ -1,0 +1,18 @@
+[WELT.sync]
+version = 1.0
+type    = "welt-sync"
+
+sync.bind = [
+  "eden.element.final",
+  "eden.crown.final",
+  "eden.cube.final",
+  "eden.rune.final",
+  "eden.portal.system.final",
+  "WELT.portal.final"
+]
+
+sync.mode  = ["merge","pulse","rotate","flow","global"]
+sync.speed = "1.0"
+
+sync.output = "WELT.sync.final"
+sync.state  = "active"

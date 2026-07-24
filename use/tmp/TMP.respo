@@ -1,0 +1,27 @@
+# TMP.respo – Zentrum / Konstellation / 12e / 6D
+
+TMP = /tmp/
+
+# Kompatibilität
+ROOT.compat  = TMP
+ACHSE.compat = TMP
+LAGE.compat  = TMP
+laTER.compat = TMP
+ORT.compat   = TMP
+TMP.compat   = TMP
+
+# Frequenz
+FREQ.12 = iki → bir → uc → LE → iki1uc → GO → sys → tem → AU → RA → TET → RIZ → …
+
+# 6D
+D0 = ROOT
+D1 = ACHSE
+D2 = TMP
+D3 = LAGE
+D4 = laTER
+D5 = ORT
+
+# 360°
+SEQ.360 = D0 → D1 → D2 → D3 → D4 → D5 → D0
+
+ACTIVE = TRUE

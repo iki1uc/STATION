@@ -1,0 +1,17 @@
+[UNI.language]
+version = 1.1
+type    = "universum-language"
+
+uni.language.map = [
+  "DE","TR","EN",
+  "DA","NE","BEN",
+  "4u","WHY","onu"
+]
+
+uni.language.bind = [
+  "scan.language.final",
+  "ORT.scan.final"
+]
+
+uni.language.output = "UNI.language.final"
+uni.language.state  = "active"

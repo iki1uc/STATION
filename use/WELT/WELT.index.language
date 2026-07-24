@@ -1,0 +1,19 @@
+[WELT.index.language]
+version = 1.1
+type    = "welt-language"
+
+lang.support = ["DE","TR","EN","DA","NE","BEN"]
+lang.default = "DE"
+
+lang.labels = {
+  DE  = "Deutsch",
+  TR  = "Türkçe",
+  EN  = "English",
+  DA  = "du",
+  NE  = "er",
+  BEN = "ich"
+}
+
+lang.mode   = ["switch","auto","manual","fallback"]
+lang.output = "WELT.language.final"
+lang.state  = "active"

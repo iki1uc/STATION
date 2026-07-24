@@ -1,0 +1,20 @@
+[WELT.index.html.layer]
+version = 1.0
+type    = "welt-html"
+
+html.bind = [
+  "WELT.language.final",
+  "WELT.portal.final",
+  "WELT.layer.final",
+  "WELT.room.final",
+  "WELT.sync.final",
+  "visuals.final"
+]
+
+html.mode   = ["render","portal","eden","welt","language"]
+html.output = "WELT.index.html.final"
+html.state  = "active"
+html.bind += [
+  "WELT.language.buttons.final",
+  "WELT.language.switch.final"
+]

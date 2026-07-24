@@ -1,0 +1,12 @@
+[UNIVERSUM.axiom]
+version = 1.0
+type    = "universum-axiom"
+
+universum.bind = [
+  "C.RESPO",
+  "X.RESPO",
+  "Z.RESPO"
+]
+
+universum.output = "UNIVERSUM.final"
+universum.state  = "active"

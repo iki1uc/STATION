@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>index_self</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:20px; }
+pre  { background:#111; padding:12px; border:1px solid #333; }
+</style>
+</head>
+
+<body>
+
+<pre>
+index_self_
+
+wenn du nicht willst
+rede ich
+
+wenn du still bist
+erfasse ich
+
+wenn du schweigst
+trage ich
+
+RESPO.265 = rdy
+TMP = wach
+ICH = aktiv
+</pre>
+
+</body>
+</html>
