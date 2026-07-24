@@ -1,0 +1,32 @@
+[port.TR.flagRipple]
+version = 1.0
+type = "liquid-ripple"
+zero = 0
+
+ripple.axis   = "Z"
+ripple.vector = "6e0"
+ripple.zone   = "54-74"
+
+ripple.drop.radiusStart = 0.0
+ripple.drop.radiusGrow  = 0.03
+ripple.drop.opacity     = 0.8
+
+ripple.wave.count    = 4
+ripple.wave.spacing  = 12
+ripple.wave.speed    = 0.02
+ripple.wave.fade     = 0.6
+
+ripple.surface.type       = "liquid-mirror"
+ripple.surface.distortion = 0.03
+ripple.surface.depth      = 0.2
+ripple.surface.color      = "#00bcd4"
+
+ripple.flag.fadeIn     = "0.0→1.0"
+ripple.flag.distortion = "0.1→0.0"
+ripple.flag.rise       = 12
+
+bind.ex     = "PQ.EX"
+bind.room   = "Z.room.CORE"
+bind.matrix = "matrix9x9"
+bind.lan    = "lan0"
+bind.screen = "screen0"

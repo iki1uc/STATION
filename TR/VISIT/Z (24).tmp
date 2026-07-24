@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>verify – Ghost Monitor</title>
+<style>
+body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:20px; }
+.cyan { color:#0ff; }
+.green { color:#3f3; }
+</style>
+</head>
+<body>
+
+<h1>verify.html – Ghost Monitor</h1>
+<div id="ghost"></div>
+
+<script>
+document.getElementById("ghost").innerHTML = `
+    <p class="cyan">Ghost‑Repair‑Level‑2 aktiv</p>
+    <p class="green">verify.html wurde erfolgreich durch Ghost repariert</p>
+`;
+</script>
+
+</body>
+</html>

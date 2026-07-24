@@ -1,0 +1,61 @@
+<script type="module">
+    import VEC from "./VEC.tor";
+
+    // HH.respo – Semi‑Admin / Helper
+    const HHrespo = {
+        name: "HH.respo",
+        level: "semi-admin",
+        active: true,
+
+        // Geräte-Status
+        status() {
+            return {
+                PX: VEC.PX.id,
+                PQ: VEC.PQ.id,
+                PR: VEC.PR.id,
+                channel: VEC.channel,
+                time: Date.now()
+            };
+        },
+
+        // Trigger: SAVE
+        save(device) {
+            const data = {
+                id: VEC[device].id,
+                channel: VEC.channel,
+                time: Date.now()
+            };
+            localStorage.setItem(device, JSON.stringify(data));
+            return `${device} gespeichert`;
+        },
+
+        // Trigger: LOAD
+        load(device) {
+            const data = localStorage.getItem(device);
+            if (!data) return `${device} hat keinen gespeicherten Zustand`;
+            return JSON.parse(data);
+        },
+
+        // Trigger: RUN
+        run(device) {
+            const packet = VEC.send(VEC[device].id, "SYSTEM", "RUN");
+            return VEC.recv(packet);
+        }
+    };
+
+    // HH.respo Ausgabe
+    window.addEventListener("DOMContentLoaded", () => {
+        const out = document.getElementById("run8");
+        const st = HHrespo.status();
+
+        out.textContent =
+            "HH.respo aktiv\n" +
+            "Admin-Level: " + HHrespo.level + "\n" +
+            "Geräte:\n" +
+            "  PX: " + st.PX + "\n" +
+            "  PQ: " + st.PQ + "\n" +
+            "  PR: " + st.PR + "\n" +
+            "Channel: " + st.channel + "\n" +
+            "Status: bereit";
+    });
+</script>

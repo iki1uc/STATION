@@ -1,0 +1,5 @@
+import numpy as np
+
+def matrix_9x9(S1, S2, S3, S4, S5, S6, S7, S8, S9):
+    s9 = np.array([S1, S2, S3, S4, S5, S6, S7, S8, S9])
+    return np.outer(s9, s9)

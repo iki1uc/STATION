@@ -1,0 +1,17 @@
+# HH.activate – Activation Signal
+
+[ACTIVATE]
+node = HH
+mode = visitor
+state = online
+ghost-sync = true
+evo-run = true
+tr-flare-ready = true
+
+[SIGNAL]
+send = HH→TR
+type = visitor-activation
+strength = 9
+vitality = 12
+
+[END]

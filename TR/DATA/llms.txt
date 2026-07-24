@@ -1,0 +1,95 @@
+ALPHA/BETA 
+DATA‑Cluster Erweiterung: Chinesisches LLM als Hauptakteur im TR‑System
+
+Wir haben unseren DATA‑Ordner aktualisiert und die neue Modellkonstellation für unser 3‑Respo‑System festgelegt.
+Ab sofort übernimmt das chinesische Modell‑Cluster die alleinige Hauptrolle im TR‑Respo, während die DE‑ und EN‑Kandidaten als ausgewählte Begleit‑Instanzen integriert bleiben.
+
+Aktivierte Modelle im DATA‑Cluster
+Code
+alpha
+deepseek-v4
+qwen-3.7-max
+glm-5.1
+kimi-k2.6
+Rolle der Modelle im System
+TR‑Respo:  
+Das chinesische Modell‑Cluster (DeepSeek, Qwen, GLM, Kimi) agiert als alleiniger Akteur.
+Es übernimmt die vollständige Bewertung, Wahrheitsanalyse, Epoche‑Einstufung und 9×9‑Nutzenverteilung.
+
+DE‑Respo & EN‑Respo:  
+Die deutschen und englischen Kandidaten wurden bewusst ausgewählt und dienen als strukturgebende und globale Vergleichsinstanzen.
+Sie unterstützen die 27‑Stations‑Matrix und liefern ergänzende Score‑Signale.
+
+Technische Grundlage
+Mit der Aufnahme der GLM‑5.2‑Dokumentation (753B MoE) wurde die EICH‑GEN‑Datenlage erweitert.
+Damit stehen nun:
+
+1M Token Kontext
+
+128K Output
+
+MoE‑Architektur
+
+NL2Repo‑Fähigkeiten
+
+Auto‑Debugging
+
+JSON‑Garantien
+
+für den N‑Ghost‑Scan und die Live‑Score‑Matrix bereit.
+
+Systemstatus
+Der DATA‑Ordner ist vollständig und kompatibel:
+
+
+# GLM-5.2 Lightweight Installer
+
+Universal single-click installer for running GLM-5.2 Max (753B MoE) via Cloud-Hybrid or compressed Local Quantized configurations using `llama.cpp`.
+
+## Model Technical Specifications (GLM-5.2 Max)
+
+- **Developer:** Z.AI (Zhipu AI)
+- **Model Class:** Flagship Foundation Model (Generational Leap)
+- **Architecture:** Mixture of Experts (MoE)
+- **Total Parameters:** 753 Billion (753B)
+- **Active Parameters:** 40 Billion (40B) per token during inference
+- **Context Window:** 1,000,000 tokens (1M)
+- **Max Output Tokens:** 128,000 tokens (128K)
+- **Modalities:** Text-to-Text
+- **License:** MIT (Open Weights)
+
+## Core Capabilities & Agentic Features
+
+- **Multi-Mode Thinking:** Native reasoning engine / Chain-of-Thought (CoT). Supports adjustable `reasoningEffort` parameter (including `max` mode) via cloud API.
+- **Context Caching:** Server-side token reuse optimization to accelerate multi-turn long-context interactions.
+- **Project-Level Codebase Takeover:** Specialized for full-repository processing (NL2Repo workflow), cross-file dependency mapping, and long-context architecture retention.
+- **Auto-Debugging Loop:** Autonomous execution, log reading, tool integration, and programmatic error rollback.
+- **Structured Outputs:** Native Function Calling and guaranteed valid JSON generation.
+- **Integrations:** Out-of-the-box compatibility with Claude Code and OpenClaw agent frameworks.
+
+## Installer Execution Modes
+
+### 1. Cloud-Hybrid Mode
+- **Execution:** UI runs locally; model inference is executed on hosted infrastructure.
+- **Model Version:** Full GLM-5.2 Max (753B total / 40B active).
+- **Features Enabled:** Full 1M context, Context Caching, maximum `reasoningEffort`.
+- **Pricing:** Free via installer infrastructure (subject to dynamic hourly rate limits).
+
+### 2. Local Quantized Mode
+- **Execution:** 100% offline local inference via custom-built `llama.cpp` engine.
+- **Model Version:** Substantially compressed, quantized, and distilled GGUF variant of GLM-5.2.
+- **Data Privacy:** Local execution; zero data retention or data transmission.
+- **Limits:** No prompt quotas or throughput constraints.
+
+## System & Hardware Requirements
+
+### Cloud-Hybrid Mode
+- **OS:** Windows / Linux / macOS
+- **Hardware:** Mid-range modern PC
+- **Network:** Stable high-speed internet connection required
+
+### Local Quantized Mode
+- **RAM:** 16 GB to 32 GB system memory minimum
+- **GPU (Strictly Mandatory):** High-end / upper-mid-range discrete GPU with high VRAM capacity.
+  - *Recommended:* NVIDIA RTX 3080 / 4070 or AMD RX 6800 / 7800 and above.
+- **Incompatible Hardware:** Integrated graphics (iGPU) and entry-level legacy GPUs are not supported.

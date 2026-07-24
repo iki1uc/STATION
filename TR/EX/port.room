@@ -1,0 +1,35 @@
+function SLI(input){
+  if(input === "4u") return ["TR","EN"];
+  if(input === "onu") return ["DE","TR"];
+  if(input === "WHY") return ["DE","EN"];
+}
+
+function SLI_Route(input){
+  EX.portRoom = SLI(input);
+}
+
+const TR_KI = {
+  gen: "onu",
+  valid: ["DE","TR"],
+  vector: "6e",
+  trigger: "Z",
+  path: "D:/TR/",
+  files: {
+    model: "model.safetensors",
+    config: "config.json",
+    tokenizer: "tokenizer.json"
+  }
+};
+
+const EN_KI = {
+  gen: "WHY",
+  valid: ["DE","EN"],
+  vector: "12e",
+  trigger: "X",
+  path: "D:/EN/",
+  files: {
+    model: "model.safetensors",
+    config: "config.json",
+    tokenizer: "tokenizer.json"
+  }
+};

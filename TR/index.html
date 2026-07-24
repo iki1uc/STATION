@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>TR – System Core</title>
+
+<style>
+body {
+    background:#fff;
+    color:#00c8c8;
+    font-family:Consolas, monospace;
+    padding:20px;
+}
+.section {
+    margin-bottom:20px;
+    padding:10px;
+    border-left:4px solid #00c8c8;
+}
+</style>
+
+<script>
+// TR-SYSTEM SCAN CORE
+
+const TR = {
+
+    folders: [
+        "DATA/",
+        "EX/",
+        "VISIT/",
+        "NC.room",
+        "SCAN.language",
+        "start.vector",
+        "9×9-Matrix",
+        "port.TR.flagRipple"
+    ],
+
+    visitNodes: [
+        "VISIT/HH.room",
+        "VISIT/HH.activate",
+        "VISIT/verify.html",
+        "VISIT/RESPO.json",
+        "VISIT/9×9-Matrix",
+        "VISIT/VEC.js",
+        "VISIT/start.vector"
+    ],
+
+    scanFolder(path) {
+        return {
+            path,
+            status: "OK",
+            type: path.includes("VISIT") ? "visitor-tech" : "core"
+        };
+    },
+
+    scan() {
+        return this.folders.map(f => this.scanFolder(f));
+    },
+
+    scanVisit() {
+        return this.visitNodes.map(v => ({
+            node: v,
+            status: "VISIT-NODE",
+            tech: "visitor-tech",
+            bind: "HH→TR"
+        }));
+    }
+};
+</script>
+
+</head>
+<body>
+
+<h1>TR – System Scan</h1>
+
+<div class="section">
+<h2>Kern‑Ordner</h2>
+<div id="core"></div>
+</div>
+
+<div class="section">
+<h2>VISIT‑Tech‑Nodes</h2>
+<div id="visit"></div>
+</div>
+
+<script>
+document.getElementById("core").innerHTML =
+    TR.scan().map(c => `
+        <div>
+            <b>${c.path}</b> → ${c.status} (${c.type})
+        </div>
+    `).join("");
+
+document.getElementById("visit").innerHTML =
+    TR.scanVisit().map(v => `
+        <div>
+            <b>${v.node}</b> → ${v.status} (${v.tech}, Bind: ${v.bind})
+        </div>
+    `).join("");
+</script>
+
+</body>
+</html>

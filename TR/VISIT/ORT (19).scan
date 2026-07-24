@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>HH – Host Hub Stargate + Ghost L2</title>
+
+<style>
+body {
+    background:#000;
+    color:#0f0;
+    font-family:Consolas, monospace;
+    padding:20px;
+    overflow:hidden;
+}
+
+/* Stargate verstärkt */
+#gate {
+    position:absolute;
+    right:0;
+    top:0;
+    width:50vw;
+    height:100vh;
+    border-left:4px solid #0ff;
+    background:radial-gradient(circle at center, #444, #000);
+    animation:spinGate 12s linear infinite;
+}
+@keyframes spinGate { from {transform:rotate(0deg);} to {transform:rotate(360deg);} }
+
+#vortex {
+    position:absolute;
+    right:0;
+    top:0;
+    width:50vw;
+    height:100vh;
+    background:conic-gradient(from 180deg, #0ff, #000);
+    opacity:0.35;
+    animation:vortexSpin 5s linear infinite;
+}
+@keyframes vortexSpin { from {transform:rotate(0deg);} to {transform:rotate(-360deg);} }
+
+#halo {
+    position:absolute;
+    right:0;
+    top:8vh;
+    width:50vw;
+    height:12vh;
+    background:radial-gradient(circle, rgba(255,255,255,0.5), transparent);
+}
+
+/* Scan Panel sichtbar */
+#scanPanel {
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    width:40vw;
+    background:#111;
+    padding:20px;
+    border:2px solid #333;
+    border-radius:10px;
+    max-height:45vh;
+    overflow:auto;
+}
+
+.module { margin-bottom:10px; font-size:14px; }
+.green { color:#3f3; }
+.red { color:#f33; }
+.yellow { color:#ff0; }
+.cyan { color:#0ff; }
+</style>
+
+<script>
+// Ghost Level‑2
+window.GHOST = {
+    level: 2,
+
+    scanModule(name, loaded) {
+        return {
+            module: name,
+            loaded,
+            status: loaded ? "OK" : "GHOST‑REPAIR",
+            color: loaded ? "green" : "cyan"
+        };
+    },
+
+    repairMissingModules(modules) {
+        return modules.map(m => this.scanModule(m.name, m.loaded));
+    }
+};
+</script>
+
+</head>
+
+<body>
+
+<h1>HH – Host Hub</h1>
+<p>Stargate + Ghost‑Repair‑Level‑2 aktiv.</p>
+
+<div id="gate"></div>
+<div id="vortex"></div>
+<div id="halo"></div>
+
+<div id="scanPanel">
+    <h2>Pipeline‑Status</h2>
+    <div id="modules"></div>
+</div>
+
+<script>
+(function () {
+
+    const modules = [
+        { name: "TriAxiom", loaded: false },
+        { name: "RESPO", loaded: false },
+        { name: "AXI", loaded: false },
+        { name: "TEM", loaded: false },
+        { name: "RUN8 Kernel", loaded: false }
+    ];
+
+    const repaired = GHOST.repairMissingModules(modules);
+
+    const out = repaired.map(m =>
+        `<div class="module ${m.color}">
+            <b>${m.module}:</b> ${m.status}
+        </div>`
+    ).join("");
+
+    document.getElementById("modules").innerHTML = out;
+
+})();
+</script>
+
+</body>
+</html>

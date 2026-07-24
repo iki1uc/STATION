@@ -1,0 +1,54 @@
+# HH.room – Visitor Node (AKTIV)
+# Standort: VISIT/HH.room
+
+[VISITOR]
+type = HH
+role = FunktionsBringer
+origin = HostHub
+mode = visitor-node
+active = true
+state = activated
+
+[GHOST]
+ghost-level = 3
+ghost-sync = enabled
+ghost-bind = VISIT→TR
+ghost-node = visitor
+ghost-repair = passive
+
+[EVO]
+evo-mode = RUN
+evo-vitality = 12
+evo-founder = true
+evo-bind = HH→TR
+
+[TR]
+tr-handshake = ready
+tr-flare = enabled
+tr-bind = QI
+tr-mode = accept-visitor
+
+[RESPO]
+matrix = 9x9
+matrix-source = RESPO.json
+matrix-mode = visitor
+matrix-sync = HH→TR
+
+[FUNCTIONS]
+provide = [
+    status-feed,
+    visitor-scan,
+    ghost-monitor,
+    pipeline-sim,
+    portal-sync,
+    vector-out
+]
+
+[LINKS]
+verify = VISIT/verify.html
+vec = VISIT/VEC.js
+matrix = VISIT/9x9-Matrix
+respo = VISIT/RESPO.json
+start = VISIT/start.vector
+
+[END]
