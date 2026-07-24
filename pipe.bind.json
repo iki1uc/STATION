@@ -1,0 +1,21 @@
+{
+  "id": "STATION-PIPE-BIND",
+  "instance": "iki1uc",
+  "bind": {
+    "SCAN": "scan.respo.core.json",
+    "BIND": "respo.bind.json",
+    "INDEX": "nc.respo.index.json1",
+    "SCORE": "score.core.json",
+    "STATE": "nc.state.json",
+    "VECTOR": "nc.vector.json",
+    "PIPE": "iki1uc.pipe.index.html",
+    "TMP": "nc.tmp.index.json",
+    "RAW": "nc.raw.json"
+  },
+  "route": {
+    "ROM_to_STATION": true,
+    "TMP_to_STATION": true,
+    "NC_to_STATION": true
+  },
+  "status": "READY"
+}
