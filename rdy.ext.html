@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION RDY EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION RDY EXT</h2>
+
+<p>RDY überwacht alle Module der STATION.</p>
+
+<pre id="rdyInfo">Lade RDY...</pre>
+
+<button onclick="showRDY()">RDY Status anzeigen</button>
+
+<script src="rdy.ext.js"></script>
+
+<script>
+function showRDY() {
+    const results = window.STATION_RDY_RESULTS;
+    document.getElementById("rdyInfo").innerText =
+        JSON.stringify(results, null, 2);
+}
+</script>
+
+</body>
+</html>
