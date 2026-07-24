@@ -1,0 +1,28 @@
+{
+  "id": "STATION-INDEX-EXT",
+  "instance": "iki1uc",
+  "role": "INDEX-MASTER",
+
+  "modules": {
+    "root": "STATION/root.ext.html",
+    "pipe": "STATION/PIPE/",
+    "respo": "STATION/respo.hook.html",
+    "vector": "STATION/vector.hook.html",
+    "whirl": "STATION/whirl.motor.html",
+    "tmp": "STATION/tmp.router.html",
+    "livebridge": "STATION/livebridge.html",
+    "ki": "STATION/4u/",
+    "de": "STATION/DE/",
+    "en": "STATION/EN/",
+    "gate": "STATION/GATE/",
+    "send": "STATION/SEND/",
+    "push": "STATION/PUSH/",
+    "run8": "STATION/RUN8/",
+    "welt": "STATION/WELT/",
+    "uni": "STATION/UNI/",
+    "xi": "STATION/XI/",
+    "tr": "STATION/TR/"
+  },
+
+  "status": "READY"
+}
