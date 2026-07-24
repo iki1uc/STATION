@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION API CORE</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION API CORE</h2>
+
+<p>Die API verbindet alle Module der STATION.</p>
+
+<pre id="apiInfo">Lade API...</pre>
+
+<button onclick="testAPI()">API Test Call</button>
+
+<script src="api.core.js"></script>
+
+<script>
+setTimeout(() => {
+    const api = window.STATION_API_CORE;
+    document.getElementById("apiInfo").innerText =
+        JSON.stringify(api.cfg, null, 2);
+}, 500);
+
+function testAPI() {
+    const api = window.STATION_API_CORE;
+    const result = api.call("vector", "activate");
+    alert(JSON.stringify(result, null, 2));
+}
+</script>
+
+</body>
+</html>
