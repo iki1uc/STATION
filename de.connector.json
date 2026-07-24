@@ -1,0 +1,19 @@
+{
+  "id": "STATION-DE-CONNECTOR",
+  "instance": "iki1uc",
+  "lang": "DE",
+  "path": "STATION/DE/",
+  "channels": {
+    "ki": "STATION/4u/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "tmp": "STATION/tmp/",
+    "rom": "STATION/ROOT/"
+  },
+  "routing": {
+    "mode": "vector-whirl",
+    "priority": "high",
+    "fallback": "EN"
+  },
+  "status": "READY"
+}
