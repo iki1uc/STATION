@@ -1,0 +1,54 @@
+{
+  "id": "STATION-SYSTEM-EXT",
+  "instance": "iki1uc",
+  "role": "SYSTEM-MASTER",
+
+  "identity": {
+    "system": "STATION",
+    "version": "1.0.0",
+    "build": "iki1uc-system",
+    "author": "ridvan"
+  },
+
+  "structure": {
+    "core": "STATION/core.ext.js",
+    "root": "STATION/root.ext.js",
+    "world": "STATION/world.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "xi": "STATION/xi.ext.js",
+    "tr": "STATION/tr.ext.js",
+    "home": "STATION/home.ext.js"
+  },
+
+  "registry": {
+    "pipe": "STATION/PIPE/",
+    "tmp": "STATION/tmp/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "api": "STATION/api.core.js",
+    "send": "STATION/send.ext.js",
+    "push": "STATION/push.ext.js",
+    "gate": "STATION/gate.ext.js",
+    "rdy": "STATION/rdy.ext.js",
+    "romgate": "STATION/rom.gate.js"
+  },
+
+  "matrix": {
+    "flow": [
+      "SYSTEM → CORE → ROOT",
+      "ROOT → WORLD → UNI → XI → TR",
+      "TR → API → PIPE → TMP",
+      "TMP → VECTOR → WHIRL → SEND → PUSH → GATE → RDY → SYSTEM"
+    ],
+    "mode": "system",
+    "priority": "master"
+  },
+
+  "integrity": {
+    "check_all": true,
+    "check_registry": true,
+    "check_matrix": true
+  },
+
+  "status": "READY"
+}
