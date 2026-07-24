@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION VECTOR HOOK</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION VECTOR HOOK</h2>
+
+<p>Der VECTOR-Hook ist aktiv und steuert Achsen, WHIRL und KI/DE/EN/TMP/ROM.</p>
+
+<pre id="vectorInfo">Lade VECTOR...</pre>
+
+<script src="vector.hook.js"></script>
+
+<script>
+setTimeout(() => {
+    const hook = window.STATION_VECTOR_HOOK;
+    document.getElementById("vectorInfo").innerText =
+        JSON.stringify(hook.cfg, null, 2);
+}, 500);
+</script>
+
+</body>
+</html>
