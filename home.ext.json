@@ -1,0 +1,41 @@
+{
+  "id": "STATION-HOME-EXT",
+  "instance": "iki1uc",
+  "role": "HOME-MASTER",
+
+  "sections": {
+    "system": {
+      "root": "root.ext.html",
+      "livebridge": "livebridge.html",
+      "api": "api.core.html"
+    },
+    "routing": {
+      "pipe": "pipe.bind.html",
+      "tmp": "tmp.router.html",
+      "respo": "respo.hook.html"
+    },
+    "motion": {
+      "vector": "vector.hook.html",
+      "whirl": "whirl.motor.html"
+    },
+    "language": {
+      "ki": "4u/",
+      "de": "DE/",
+      "en": "EN/"
+    },
+    "core": {
+      "gate": "GATE/",
+      "send": "SEND/",
+      "push": "PUSH/",
+      "run8": "RUN8/"
+    },
+    "world": {
+      "welt": "WELT/",
+      "uni": "UNI/",
+      "xi": "XI/",
+      "tr": "TR/"
+    }
+  },
+
+  "status": "READY"
+}
