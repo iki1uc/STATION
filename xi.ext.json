@@ -1,0 +1,30 @@
+{
+  "id": "STATION-XI-EXT",
+  "instance": "iki1uc",
+  "role": "XI-MASTER",
+
+  "logic": {
+    "pattern": "XI_PATTERN_ENGINE",
+    "context": "XI_CONTEXT_ENGINE",
+    "meta": "XI_META_ENGINE",
+    "shift": "XI_SHIFT_ENGINE"
+  },
+
+  "links": {
+    "core": "STATION/core.ext.js",
+    "root": "STATION/root.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "tr": "STATION/tr.ext.js",
+    "world": "STATION/world.ext.js",
+    "api": "STATION/api.core.js",
+    "livebridge": "STATION/livebridge.js"
+  },
+
+  "routing": {
+    "mode": "xi",
+    "priority": "logic",
+    "fallback": "root"
+  },
+
+  "status": "READY"
+}
