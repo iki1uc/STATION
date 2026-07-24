@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION PUSH EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION PUSH EXT</h2>
+
+<p>PUSH löst Events aus und triggert Module.</p>
+
+<pre id="pushInfo">Lade PUSH...</pre>
+
+<button onclick="testPUSH()">PUSH Test</button>
+
+<script src="push.ext.js"></script>
+
+<script>
+setTimeout(() => {
+    const push = window.STATION_PUSH_EXT;
+    document.getElementById("pushInfo").innerText =
+        JSON.stringify(push.cfg, null, 2);
+}, 500);
+
+function testPUSH() {
+    const push = window.STATION_PUSH_EXT;
+    const result = push.push("move", "X+1");
+    alert(JSON.stringify(result, null, 2));
+}
+</script>
+
+</body>
+</html>
