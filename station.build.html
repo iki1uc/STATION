@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION FULL BUILD</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h1 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h1>STATION FULL BUILD</h1>
+<p>Der vollständige Build der gesamten STATION.</p>
+
+<pre id="buildInfo">Lade FULL BUILD...</pre>
+
+<button onclick="showBuild()">Build anzeigen</button>
+
+<script src="station.build.js"></script>
+
+<script>
+setTimeout(() => {
+    const build = window.STATION_FULL_BUILD;
+    document.getElementById("buildInfo").innerText =
+        JSON.stringify(build.cfg, null, 2);
+}, 500);
+
+function showBuild() {
+    const build = window.STATION_FULL_BUILD;
+    alert(JSON.stringify(build.cfg, null, 2));
+}
+</script>
+
+</body>
+</html>
