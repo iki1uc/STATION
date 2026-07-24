@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION STARTER</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h1 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h1>STATION STARTER</h1>
+<p>Startpunkt der gesamten STATION.</p>
+
+<pre id="starterInfo">Lade STARTER...</pre>
+
+<button onclick="showStarter()">Starter anzeigen</button>
+
+<script src="starter.js"></script>
+
+<script>
+setTimeout(() => {
+    const starter = window.STATION_STARTER;
+    document.getElementById("starterInfo").innerText =
+        JSON.stringify(starter.cfg, null, 2);
+}, 500);
+
+function showStarter() {
+    const starter = window.STATION_STARTER;
+    alert(JSON.stringify(starter.cfg, null, 2));
+}
+</script>
+
+</body>
+</html>
