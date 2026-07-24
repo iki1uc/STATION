@@ -1,0 +1,34 @@
+{
+  "id": "STATION-WORLD-EXT",
+  "instance": "iki1uc",
+  "role": "WORLD-MASTER",
+
+  "zones": {
+    "earth": "ZONE_EARTH",
+    "eu": "ZONE_EU",
+    "de": "ZONE_DE",
+    "city": "ZONE_CITY",
+    "room": "ZONE_ROOM"
+  },
+
+  "layers": {
+    "root": "STATION/root.ext.js",
+    "pipe": "STATION/PIPE/",
+    "tmp": "STATION/tmp/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "api": "STATION/api.core.js",
+    "send": "STATION/send.ext.js",
+    "push": "STATION/push.ext.js",
+    "gate": "STATION/gate.ext.js",
+    "rdy": "STATION/rdy.ext.js"
+  },
+
+  "routing": {
+    "mode": "world",
+    "priority": "global",
+    "fallback": "root"
+  },
+
+  "status": "READY"
+}
