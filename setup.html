@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION SETUP</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h1 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h1>STATION SETUP</h1>
+<p>Initialisierung der gesamten STATION.</p>
+
+<pre id="setupInfo">Lade SETUP...</pre>
+
+<button onclick="showSetup()">Setup anzeigen</button>
+
+<script src="setup.js"></script>
+
+<script>
+setTimeout(() => {
+    const setup = window.STATION_SETUP;
+    document.getElementById("setupInfo").innerText =
+        JSON.stringify(setup.cfg, null, 2);
+}, 500);
+
+function showSetup() {
+    const setup = window.STATION_SETUP;
+    alert(JSON.stringify(setup.cfg, null, 2));
+}
+</script>
+
+</body>
+</html>
