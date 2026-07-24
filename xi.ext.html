@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATION XI EXT</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+button { background:#222; color:#6cf; border:1px solid #333; padding:8px; margin-top:10px; }
+button:hover { background:#333; color:#0f0; }
+</style>
+
+</head>
+
+<body>
+
+<h2>STATION XI EXT</h2>
+
+<p>XI verarbeitet Muster, Kontexte, Meta-Signale und Logik-Shifts.</p>
+
+<pre id="xiInfo">Lade XI...</pre>
+
+<button onclick="testPattern()">Pattern Test</button>
+<button onclick="testContext()">Context Test</button>
+<button onclick="testMeta()">Meta Test</button>
+<button onclick="testShift()">Shift Test</button>
+
+<script src="xi.ext.js"></script>
+
+<script>
+setTimeout(() => {
+    const xi = window.STATION_XI_EXT;
+    document.getElementById("xiInfo").innerText =
+        JSON.stringify(xi.cfg, null, 2);
+}, 500);
+
+function testPattern() {
+    const xi = window.STATION_XI_EXT;
+    alert(JSON.stringify(xi.pattern("alpha"), null, 2));
+}
+
+function testContext() {
+    const xi = window.STATION_XI_EXT;
+    alert(JSON.stringify(xi.context("beta"), null, 2));
+}
+
+function testMeta() {
+    const xi = window.STATION_XI_EXT;
+    alert(JSON.stringify(xi.meta("gamma"), null, 2));
+}
+
+function testShift() {
+    const xi = window.STATION_XI_EXT;
+    alert(JSON.stringify(xi.shift("delta"), null, 2));
+}
+</script>
+
+</body>
+</html>
