@@ -1,0 +1,34 @@
+{
+  "id": "STATION-INSTALLER",
+  "version": "1.0.0",
+  "build": "iki1uc-installer",
+  "role": "INSTALLER-MASTER",
+
+  "steps": {
+    "check": "INSTALL_CHECK",
+    "prepare": "INSTALL_PREPARE",
+    "copy": "INSTALL_COPY",
+    "register": "INSTALL_REGISTER",
+    "finalize": "INSTALL_FINALIZE"
+  },
+
+  "includes": {
+    "system": "STATION/system.ext.js",
+    "core": "STATION/core.ext.js",
+    "root": "STATION/root.ext.js",
+    "world": "STATION/world.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "xi": "STATION/xi.ext.js",
+    "tr": "STATION/tr.ext.js",
+    "api": "STATION/api.core.js",
+    "modules": "ALL MODULES INCLUDED"
+  },
+
+  "checks": {
+    "integrity": "OK",
+    "structure": "OK",
+    "registry": "OK"
+  },
+
+  "status": "INSTALL_READY"
+}
