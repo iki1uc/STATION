@@ -1,0 +1,32 @@
+{
+  "id": "STATION-LIVE",
+  "version": "1.0.0",
+  "build": "iki1uc-live",
+  "role": "LIVE-MASTER",
+
+  "pulse": {
+    "enabled": true,
+    "interval": 250
+  },
+
+  "events": {
+    "live_tick": "LIVE_TICK",
+    "live_sync": "LIVE_SYNC",
+    "live_update": "LIVE_UPDATE",
+    "live_stream": "LIVE_STREAM"
+  },
+
+  "state": {
+    "live": "IDLE",
+    "runtime": "READY",
+    "system": "ACTIVE"
+  },
+
+  "stream": {
+    "mode": "LIVE",
+    "buffer": "LIVE_BUFFER",
+    "channel": "LIVE_CHANNEL"
+  },
+
+  "status": "LIVE_READY"
+}
