@@ -1,0 +1,41 @@
+{
+  "id": "STATION-DEPLOY",
+  "version": "1.0.0",
+  "build": "iki1uc-deploy",
+  "role": "DEPLOY-MASTER",
+
+  "targets": {
+    "local": "DEPLOY_LOCAL",
+    "github": "DEPLOY_GITHUB",
+    "server": "DEPLOY_SERVER",
+    "cloud": "DEPLOY_CLOUD"
+  },
+
+  "pipeline": {
+    "prepare": "DEPLOY_PREPARE",
+    "package": "DEPLOY_PACKAGE",
+    "verify": "DEPLOY_VERIFY",
+    "release": "DEPLOY_RELEASE",
+    "activate": "DEPLOY_ACTIVATE"
+  },
+
+  "includes": {
+    "system": "STATION/system.ext.js",
+    "core": "STATION/core.ext.js",
+    "root": "STATION/root.ext.js",
+    "world": "STATION/world.ext.js",
+    "uni": "STATION/uni.ext.js",
+    "xi": "STATION/xi.ext.js",
+    "tr": "STATION/tr.ext.js",
+    "api": "STATION/api.core.js",
+    "modules": "ALL MODULES INCLUDED"
+  },
+
+  "integrity": {
+    "pipeline": "OK",
+    "targets": "OK",
+    "includes": "OK"
+  },
+
+  "status": "DEPLOY_READY"
+}
