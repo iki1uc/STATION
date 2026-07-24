@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PIPE ROOT INDEX (((WIEIMMER)))</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+h2, h3 { color:#6cf; }
+pre { background:#111; border:1px solid #333; padding:12px; }
+a { color:#6cf; }
+.module-list li { margin-bottom:6px; }
+.status-ok { color:#0f0; }
+.status-warn { color:#ff0; }
+.status-err { color:#f00; }
+</style>
+
+</head>
+
+<body>
+
+<h2>PIPE ROOT INDEX</h2>
+
+<section id="root">
+<b>ID:</b> PIPE-ROOT-INDEX<br>
+<b>instance:</b> iki1uc<br>
+<b>master:</b> MASTER-KERN<br>
+<b>status:</b> <span class="status-ok">READY</span><br>
+
+<pre>
+KONSTELLATION = TMP / ROM / NC
+FREQ = 12e
+6D = D1
+360° = Routing-Sequenz
+PIPE = RESPO #7 (Transit / Router / Cache)
+READY = 100%
+</pre>
+</section>
+
+<hr>
+
+<section id="modules">
+<h3>Geladene PIPE-Module</h3>
+
+<ul class="module-list">
+
+  <li>✔ <a href="iki1uc.pipe.index.html">PIPE INDEX</a> — Haupt-Router</li>
+  <li>✔ <a href="pipe.bind.index.html">PIPE BIND</a> — Bindet SCAN/BIND/INDEX</li>
+  <li>✔ <a href="pipe.class.index.html">PIPE CLASS</a> — Typen: Router/Cache/Wloch/Warp</li>
+  <li>✔ <a href="pipe.geo.index.html">PIPE GEO</a> — Achsen-Geometrie</li>
+  <li>✔ <a href="pipe.meta.index.html">PIPE META</a> — Meta-Daten / real_gain</li>
+  <li>✔ <a href="pipe.weight.index.html">PIPE WEIGHT</a> — Score-Gewichtung</li>
+  <li>✔ <a href="pipe.stable.index.html">PIPE STABLE</a> — Stabilitäts-Layer</li>
+  <li>✔ <a href="pipe.hotswap.index.html">PIPE HOTSWAP</a> — ROM↔TMP Umschaltung</li>
+  <li>✔ <a href="respo.motor.index.html">RESPO MOTOR</a> — Aktiviert RESPO #7</li>
+
+</ul>
+</section>
+
+<hr>
+
+<section id="respo">
+<h3>RESPO-Abhängigkeiten</h3>
+
+<ul class="module-list">
+  <li>✔ SCAN — <a href="scan.respo.core.json">scan.respo.core.json</a></li>
+  <li>✔ BIND — <a href="respo.bind.json">respo.bind.json</a></li>
+  <li>✔ INDEX — <a href="nc.respo.index.json1">nc.respo.index.json1</a></li>
+  <li>✔ SCORE — <a href="score.core.json">score.core.json</a></li>
+  <li>✔ STATE — <a href="nc.state.json">nc.state.json</a></li>
+  <li>✔ VECTOR — <a href="nc.vector.json">nc.vector.json</a></li>
+  <li>✔ PIPE — (dieses Modul)</li>
+  <li>✔ TMP — <a href="nc.tmp.index.json">nc.tmp.index.json</a></li>
+  <li>✔ RAW — <a href="nc.raw.json">nc.raw.json</a></li>
+</ul>
+</section>
+
+<hr>
+
+<section id="start">
+<h3>Start</h3>
+<p>
+PIPE kann hier nicht automatisch ausgeführt werden (GitHub Pages).<br>
+Diese Seite dient als <b>Start-Übersicht</b> für alle PIPE- und RESPO-Module.<br>
+Sie zeigt den vollständigen Zustand des Transit-Systems.
+</p>
+</section>
+
+</body>
+</html>
