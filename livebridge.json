@@ -1,25 +1,32 @@
 {
   "id": "STATION-LIVEBRIDGE",
-  "instance": "iki1uc",
+  "version": "1.0.0",
+  "build": "iki1uc-livebridge",
+  "role": "LIVEBRIDGE-MASTER",
 
   "bridge": {
-    "mode": "sync",
-    "autosync": true,
-    "interval": 12,
-    "priority": "high"
+    "enabled": true,
+    "interval": 150
   },
 
-  "modules": {
-    "respo": "STATION/respo.hook.js",
-    "vector": "STATION/vector.hook.js",
-    "whirl": "STATION/whirl.motor.js",
-    "tmp": "STATION/tmp.router.js",
-    "pipe": "STATION/pipe.bind.js",
-    "ki": "STATION/4u/",
-    "de": "STATION/DE/",
-    "en": "STATION/EN/",
-    "rom": "STATION/ROOT/"
+  "sync": {
+    "live_to_runtime": "SYNC_LIVE_RUNTIME",
+    "runtime_to_system": "SYNC_RUNTIME_SYSTEM",
+    "system_to_live": "SYNC_SYSTEM_LIVE"
   },
 
-  "status": "READY"
+  "flow": {
+    "input": "BRIDGE_INPUT",
+    "process": "BRIDGE_PROCESS",
+    "output": "BRIDGE_OUTPUT"
+  },
+
+  "state": {
+    "bridge": "IDLE",
+    "live": "READY",
+    "runtime": "READY",
+    "system": "ACTIVE"
+  },
+
+  "status": "LIVEBRIDGE_READY"
 }
