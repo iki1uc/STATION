@@ -1,0 +1,34 @@
+{
+  "id": "STATION-PUSH-EXT",
+  "instance": "iki1uc",
+  "role": "PUSH-MASTER",
+
+  "events": {
+    "start": "MODULE_START",
+    "move": "VECTOR_MOVE",
+    "spin": "WHIRL_SPIN",
+    "pipe": "PIPE_TRIGGER",
+    "tmp": "TMP_WRITE",
+    "send": "SEND_SIGNAL",
+    "api": "API_CALL"
+  },
+
+  "targets": {
+    "pipe": "STATION/PIPE/",
+    "tmp": "STATION/tmp/",
+    "vector": "STATION/VECTOR/",
+    "whirl": "STATION/WHIRL/",
+    "send": "STATION/send.ext.js",
+    "api": "STATION/api.core.js",
+    "root": "STATION/root.ext.js",
+    "livebridge": "STATION/livebridge.js"
+  },
+
+  "routing": {
+    "mode": "push",
+    "priority": "high",
+    "fallback": "send"
+  },
+
+  "status": "READY"
+}
