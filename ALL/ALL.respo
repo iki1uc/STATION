@@ -1,0 +1,15 @@
+export const ALL_RESPO = {
+    core: {},
+    hyperraum: {},
+    pipeline12: {},
+    portal: {},
+    fusion: {},
+    vectorcube: {},
+    orbit: {},
+    add(section, data){
+        this[section] = data;
+    },
+    get(){
+        return this;
+    }
+};

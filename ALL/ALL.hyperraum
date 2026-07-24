@@ -1,0 +1,16 @@
+import { ALL_RESPO } from "./ALL.respo.js";
+
+export function ALL_HYPERRAUM(){
+    const out = {
+        score: Math.random() * 999,
+        deg: Math.floor(Math.random() * 360),
+        vector: [
+            Math.random().toFixed(3),
+            Math.random().toFixed(3),
+            Math.random().toFixed(3)
+        ],
+        layer: "RUN6"
+    };
+    ALL_RESPO.add("hyperraum", out);
+    return out;
+}

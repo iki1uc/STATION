@@ -1,0 +1,15 @@
+export function ALL_VECTORCUBE(){
+    const out = {
+        cube: {
+            front: "OK",
+            back: "OK",
+            left: "OK",
+            right: "OK",
+            top: "OK",
+            bottom: "OK"
+        },
+        mode: "RUN6"
+    };
+    ALL_RESPO.add("vectorcube", out);
+    return out;
+}

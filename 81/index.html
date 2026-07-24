@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>81 · GEO‑Pipeline</title>
+
+<style>
+body { background:#000; margin:0; }
+canvas { display:block; margin:auto; background:#111; }
+</style>
+
+<script type="module">
+import { draw81geo } from "./81geo.js";
+import { drawPipeline } from "./81pipeline.js";
+import { drawOCTA } from "./81oxta.js";
+
+window.onload = () => {
+    const c = document.getElementById("canvas81");
+    const x = c.getContext("2d");
+
+    draw81geo(x);      // 81‑Matrix sichtbar
+    drawOCTA(x);       // OCTA sichtbar
+    drawPipeline(x);   // Pipeline sichtbar
+};
+</script>
+</head>
+
+<body>
+<canvas id="canvas81" width="600" height="600"></canvas>
+</body>
+</html>
