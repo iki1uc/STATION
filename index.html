@@ -2,34 +2,33 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>STATION · AXIS ENGINE · BORG‑CUBE</title>
+<title>STATION · FRAGE‑Bogen · RESPO‑LEARN · AUTO‑RUN</title>
 
 <style>
-    body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:20px; }
-    h1 { color:#ff00ff; text-shadow:0 0 10px #ff00ff; }
-    .block { background:#111; padding:15px; border-left:4px solid #ff00ff; margin-bottom:20px; }
-    pre { white-space:pre-wrap; background:#000; padding:12px; border-left:3px solid #00e0ff; }
+body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:20px; }
+h1 { color:#ff00ff; text-shadow:0 0 10px #ff00ff; }
+.block { background:#111; padding:15px; border-left:4px solid #ff00ff; margin-bottom:20px; }
+pre { background:#000; padding:12px; border-left:3px solid #00e0ff; white-space:pre-wrap; }
 </style>
-
 </head>
 
 <body>
 
-<h1>STATION · AXIS ENGINE · BORG‑CUBE</h1>
+<h1>STATION · FRAGE‑Bogen · RESPO‑LEARN · AUTO‑RUN</h1>
 
 <div class="block">
-    <h2>AXIS 1</h2>
-    <pre id="ax1"></pre>
+    <h2>FRAGE</h2>
+    <pre id="frage"></pre>
 </div>
 
 <div class="block">
-    <h2>AXIS 3</h2>
-    <pre id="ax3"></pre>
+    <h2>RESPO‑ANTWORT</h2>
+    <pre id="antwort"></pre>
 </div>
 
 <div class="block">
-    <h2>AXIS 6</h2>
-    <pre id="ax6"></pre>
+    <h2>VERWERTUNG</h2>
+    <pre id="verwertung"></pre>
 </div>
 
 <div class="block">
@@ -37,83 +36,83 @@
     <pre id="cube"></pre>
 </div>
 
-<div class="block">
-    <h2>WARP‑TUNNEL</h2>
-    <pre id="warp"></pre>
-</div>
+<script type="module">
 
-<div class="block">
-    <h2>AMIGA‑SCENE</h2>
-    <pre id="amiga"></pre>
-</div>
-
-<div class="block">
-    <h2>GTA‑6 ASCII LIVE</h2>
-    <pre id="gta"></pre>
-</div>
-
-<script>
-async function load(path) {
-    return await fetch(path).then(r => r.text());
-}
-
-document.getElementById("ax1").innerText = await load("./1.room");
-document.getElementById("ax3").innerText = await load("./3.room");
-document.getElementById("ax6").innerText = await load("./6.room");
+/* ============================================================
+   STATION · FRAGE‑Bogen · RESPO‑LEARN · AUTO‑RUN
+   ============================================================ */
 
 let frame = 0;
 
-function cubeFrame() {
-return `
-                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-           ▓▓▓▓                     ▓▓▓▓
-       ▓▓▓                               ▓▓▓
-    ▓▓▓                                     ▓▓▓
-  ▓▓                                           ▓▓
- ▓                                               ▓
- ▓   AX1 → ●   (LEFT → CENTER)
- ▓   AX3 → ●   (CENTER → FORWARD)
- ▓   AX6 → ●   (RIGHT → OUT)
-  ▓                                             ▓
-    ▓▓                                     ▓▓▓
-       ▓▓▓                               ▓▓▓
-           ▓▓▓▓                     ▓▓▓▓
-                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+/* -----------------------------
+   RESPO‑Zonen (Antwort‑Pool)
+------------------------------ */
+const RESPO = [
+    "Die Auskunft kann erst erteilt werden, wenn feststeht, dass sie nicht erteilt werden kann.",
+    "Der Vorgang ist in Bearbeitung, obwohl er nicht begonnen wurde.",
+    "Die Entscheidung hängt von einer Entscheidung ab, die noch nicht entschieden wurde.",
+    "Die Anfrage ist gültig, solange sie ungültig bleibt.",
+    "Der Zustand ist eindeutig, weil er nicht eindeutig festgestellt werden kann."
+];
 
-ROTATION: ${["↻","⟳","⟲"][frame % 3]}
+/* -----------------------------
+   FRAGE‑Generator
+------------------------------ */
+function FRAGE_TUM(frame){
+    return `Wie lautet die eindeutige Auskunft, wenn die Auskunft aufgrund der Auskunftslage nicht eindeutig angegeben werden kann? (Frame ${frame})`;
+}
+
+/* -----------------------------
+   RESPO‑Antwort
+------------------------------ */
+function RESPO_ANTWORT(frame){
+    return RESPO[frame % RESPO.length];
+}
+
+/* -----------------------------
+   Verwertung
+------------------------------ */
+function RESPO_VERWERTUNG(frage, antwort){
+    return `Frage: ${frage}\nAntwort: ${antwort}\n→ Verwertung aktiv`;
+}
+
+/* -----------------------------
+   BORG‑CUBE‑Phänomen
+------------------------------ */
+function BORG_CUBE(frame, antwort){
+    return `
+████████████████████████████
+█ FRAME: ${frame}
+█ RESPO: ${antwort.substring(0, 22)}...
+█ STATUS: PHÄNOMEN‑AKTIV
+████████████████████████████
 `;
 }
 
-function warpFrame() {
-return `
-Depth: ${"●".repeat((frame % 5) + 1)}
-Warp : ${"~".repeat((frame % 20) + 5)}
-`;
-}
+/* -----------------------------
+   ENGINE (AUTO‑RUN)
+------------------------------ */
+function ENGINE(){
 
-function amigaFrame() {
-const bar = "▓".repeat(20 + (frame % 10));
-return `${bar}\n${bar}\n${bar}`;
-}
+    const frage = FRAGE_TUM(frame);
+    const antwort = RESPO_ANTWORT(frame);
+    const verwertet = RESPO_VERWERTUNG(frage, antwort);
+    const cube = BORG_CUBE(frame, antwort);
 
-function gtaFrame() {
-const city = ["🔥──🚓──🏙", "🚓──🔥──🏙", "🏙──🚓──🔥"];
-return `
-${city[frame % 3]}
-GTA‑6 ASCII LIVE
-FRAME: ${frame}
-`;
-}
+    document.getElementById("frage").innerText = frage;
+    document.getElementById("antwort").innerText = antwort;
+    document.getElementById("verwertung").innerText = verwertet;
+    document.getElementById("cube").innerText = cube;
 
-setInterval(() => {
     frame++;
+    requestAnimationFrame(ENGINE);
+}
 
-    document.getElementById("cube").innerText = cubeFrame();
-    document.getElementById("warp").innerText = warpFrame();
-    document.getElementById("amiga").innerText = amigaFrame();
-    document.getElementById("gta").innerText = gtaFrame();
+/* -----------------------------
+   AUTO‑RUN aktivieren
+------------------------------ */
+ENGINE();
 
-}, 120);
 </script>
 
 </body>
